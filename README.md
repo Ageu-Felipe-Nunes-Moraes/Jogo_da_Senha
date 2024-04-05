@@ -10,6 +10,11 @@ Neste jogo, recriei o clássico jogo da senha, originalmente conhecido como Mast
 - **Limite de Tentativas:** Você tem 10 tentativas para decifrar a combinação de cores.
 - **Reiniciar o Jogo:** Após o término do jogo, você pode reiniciá-lo para jogar novamente.
 
+## Requisitos de Instalação
+
+- Python 3.x
+- Tkinter
+
 ## Bibliotecas Necessárias
 
 - `tkinter`: Biblioteca gráfica para a interface do jogo.
