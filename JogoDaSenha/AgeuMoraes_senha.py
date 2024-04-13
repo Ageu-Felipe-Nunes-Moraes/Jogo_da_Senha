@@ -15,18 +15,18 @@ tela.attributes("-topmost", True)
 # Configura a tela para branca
 tela.configure(bg="white")
 
-def mostrarTriunfo():
+def mostrar_triunfo():
     parabens = tk.Label(tela, text="PARABÉNS VOCÊ VENCEEU!!!", bg="white", fg="green", font=("Times_New_Roman", 16))
     parabens.place(x = 920, y = 150)
 
 
-def mostrarDerrota():
+def mostrar_derrota():
     derrota = tk.Label(tela, text="VOCÊ PERDEU!!", bg="white", fg="red", font=("Times_New_Roman", 16))
     derrota.place(x = 984, y = 150)
 
 
 # Função para fechar tela
-def fecharTela(event):
+def fecha_tela(event):
     # Comando que desliga a tela
     tela.destroy()
 
@@ -39,45 +39,44 @@ def reiniciar(event=None):
 
 
 # Função para criar o botão de reiniciar
-def criarBotaoReiniciar():
+def criar_botao_reiniciar():
     
     # Cria botão de Reiniciar
-    botaoReiniciar = tk.Button(tela, text="Reiniciar", command=lambda:[reiniciar()], bg = "blue", fg = "white")
+    botao_reiniciar = tk.Button(tela, text="Reiniciar", command=lambda:[reiniciar()], bg = "blue", fg = "white")
 
     # Aplica as coordenadas do botão
-    botaoReiniciar.place(x = 1030, y = 330)
+    botao_reiniciar.place(x = 1030, y = 330)
 
 
 #Função para mover o canvasJogo para a direita
-def moverDireita():
+def mover_direita():
 
-
-    def desabilitarBotao():
-        botaoRoxo.config(state="disable")
-        botaoAzul.config(state="disable")
-        botaoVerde.config(state="disable")
-        botaoAmarelo.config(state="disable")
-        botaoVermelho.config(state="disable")
-        botaoMarrom.config(state="disable")
+    def desabilitar_botao():
+        botao_roxo.config(state="disable")
+        botao_azul.config(state="disable")
+        botao_verde.config(state="disable")
+        botao_amarelo.config(state="disable")
+        botao_vermelho.config(state="disable")
+        botao_marrom.config(state="disable")
 
     # Mover o retângulo de 50 em 50 pixels para a direita 
-    canvasJogo.move(retangulo, 50, 0)
+    canvas_jogo.move(retangulo, 50, 0)
 
     # Verificar se o retângulo alcançou a coordenada (400, 50)
-    if canvasJogo.coords(retangulo)[0] < 500:
+    if canvas_jogo.coords(retangulo)[0] < 500:
         
         # Agenda a chamada da função novamente após 100ms
-        canvasJogo.after(150, moverDireita)
+        canvas_jogo.after(150, mover_direita)
 
     # É executada se a primeira condicional não for satisfeita
     else:
 
         # Lista de cores
-        listaCores = ["blue", "purple", "brown", "green", "red", "orange"]
+        lista_cores = ["blue", "purple", "brown", "green", "red", "orange"]
         # Embaralha as cores
-        random.shuffle(listaCores)
+        random.shuffle(lista_cores)
         # Seleciona quatro cores da lista e cria uma nova
-        sorteada = random.sample(listaCores, 4)
+        sorteada = random.sample(lista_cores, 4)
         # Teste que mostra a primeira cor da nova lista
         print(sorteada[1])
 
@@ -88,16 +87,16 @@ def moverDireita():
         r = 0
 
         # Estrutura de repetição para a criação das bolas que foram selecionadas aleatóriamente
-        for resultado in range(0, 4):  
+        for _ in range(0, 4):  
 
             # Cria o fundo do canvas que fica atrás da bola
-            respostaCerta = tk.Canvas(tela, width=42, height=42, highlightthickness=0)
+            resposta_certa = tk.Canvas(tela, width=42, height=42, highlightthickness=0)
             # Cria a bola
-            respostaCerta.create_oval(0, 0, 40, 40, fill=sorteada[0 + s], outline="black")
+            resposta_certa.create_oval(0, 0, 40, 40, fill=sorteada[0 + s], outline="black")
             # Configura o canvas para branco
-            respostaCerta.configure(bg="white")
+            resposta_certa.configure(bg="white")
             # posiciona a bola na tela
-            respostaCerta.place(x = 920 + r, y = 250)
+            resposta_certa.place(x = 920 + r, y = 250)
 
             # Soma 1 ao contador
             s += 1
@@ -112,126 +111,126 @@ def moverDireita():
 
 
         # Cria o canvas por trás da faixa cinza
-        canvaFaixa = tk.Canvas(tela, width=64.2, height=460)
+        canva_faixa = tk.Canvas(tela, width=64.2, height=460)
         # Cria o retangulo cinza na tela
-        canvaFaixa.create_rectangle(0, 0, 64.8, 462, fill="grey", outline="white", width=10)
+        canva_faixa.create_rectangle(0, 0, 64.8, 462, fill="grey", outline="white", width=10)
         # Configura o canvas para cinza
-        canvaFaixa.configure(bg="grey")
+        canva_faixa.configure(bg="grey")
         # Posiciona o retangulo na tela
-        canvaFaixa.place(x=538, y=90)
+        canva_faixa.place(x=538, y=90)
 
         # Contador
         n = 0
 
         # Estrutura de repetição para criar as linhas que dividem as fases do jogo
-        for linhasSeparadas in range(0,9):
+        for _ in range(0,9):
             
             # Soma 79 ao contador
             n += 47.4
 
             # Cria o canvas por trás da linha
-            canvasLinhas = tk.Canvas(tela, width=289.2, height=6, highlightthickness=0)
+            canvas_linhas = tk.Canvas(tela, width=289.2, height=6, highlightthickness=0)
             # Mostra o canvas na tela
 
             # Cria a linha na tela
-            canvasLinhas.create_line(0, 3, 600, 3, fill="white", width=3)
+            canvas_linhas.create_line(0, 3, 600, 3, fill="white", width=3)
             # Configura o canvas para preto
-            canvasLinhas.configure(bg="black")
+            canvas_linhas.configure(bg="black")
             # Posiciona a linha na tela
-            canvasLinhas.place(x = 533, y = 555.4 - n)
+            canvas_linhas.place(x = 533, y = 555.4 - n)
 
 
         # Lista vazia das bolas que não foram preenchidas ainda
-        bolasSemPreencher = []
+        bolas_sem_preencher = []
 
         # Contador
         c = 0
         
         # Estrutura de repetição para a criação das bolas que o usuário irá preencher com as escolhas dele durante o jogo
-        for bolaSeparada in range (0, 4):
+        for _ in range (0, 4):
             
             # Soma 90 ao contador
             c += 54
 
 
             # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
-            canvaBola1 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)        
-            canvaBola1.create_oval(0, 0, 24, 24, fill="white", outline="black")
-            canvaBola1.configure(bg= "black")
-            canvaBola1.place(x = 560 + c, y = 520 )
-            bolasSemPreencher.append(canvaBola1)
+            canva_bola1 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)        
+            canva_bola1.create_oval(0, 0, 24, 24, fill="white", outline="black")
+            canva_bola1.configure(bg= "black")
+            canva_bola1.place(x = 560 + c, y = 520 )
+            bolas_sem_preencher.append(canva_bola1)
 
 
             # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
-            canvaBola2 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
-            canvaBola2.create_oval(0, 0, 24, 24, fill="white", outline="black")
-            canvaBola2.configure(bg= "black")
-            canvaBola2.place(x = 560 + c, y = 474 )
-            bolasSemPreencher.append(canvaBola2)
+            canva_bola2 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
+            canva_bola2.create_oval(0, 0, 24, 24, fill="white", outline="black")
+            canva_bola2.configure(bg= "black")
+            canva_bola2.place(x = 560 + c, y = 474 )
+            bolas_sem_preencher.append(canva_bola2)
 
 
             # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
-            canvaBola3 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
-            canvaBola3.create_oval(0, 0, 24, 24, fill="white", outline="black")
-            canvaBola3.configure(bg= "black")
-            canvaBola3.place(x = 560 + c, y = 428 )
-            bolasSemPreencher.append(canvaBola3)
+            canva_bola3 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
+            canva_bola3.create_oval(0, 0, 24, 24, fill="white", outline="black")
+            canva_bola3.configure(bg= "black")
+            canva_bola3.place(x = 560 + c, y = 428 )
+            bolas_sem_preencher.append(canva_bola3)
 
 
             # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
-            canvaBola4 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
-            canvaBola4.create_oval(0, 0, 24, 24, fill="white", outline="black")
-            canvaBola4.configure(bg= "black")
-            canvaBola4.place(x = 560 + c, y = 380 )
-            bolasSemPreencher.append(canvaBola4)
+            canva_bola4 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
+            canva_bola4.create_oval(0, 0, 24, 24, fill="white", outline="black")
+            canva_bola4.configure(bg= "black")
+            canva_bola4.place(x = 560 + c, y = 380 )
+            bolas_sem_preencher.append(canva_bola4)
 
 
             # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
-            canvaBola5 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
-            canvaBola5.create_oval(0, 0, 24, 24, fill="white", outline="black")
-            canvaBola5.configure(bg= "black")
-            canvaBola5.place(x = 560 + c, y = 334 )
-            bolasSemPreencher.append(canvaBola5)
+            canva_bola5 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
+            canva_bola5.create_oval(0, 0, 24, 24, fill="white", outline="black")
+            canva_bola5.configure(bg= "black")
+            canva_bola5.place(x = 560 + c, y = 334 )
+            bolas_sem_preencher.append(canva_bola5)
 
 
             # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
-            canvaBola6 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
-            canvaBola6.create_oval(0, 0, 24, 24, fill="white", outline="black")
-            canvaBola6.configure(bg= "black")
-            canvaBola6.place(x = 560 + c, y = 283.5 )
-            bolasSemPreencher.append(canvaBola6)
+            canva_bola6 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
+            canva_bola6.create_oval(0, 0, 24, 24, fill="white", outline="black")
+            canva_bola6.configure(bg= "black")
+            canva_bola6.place(x = 560 + c, y = 283.5 )
+            bolas_sem_preencher.append(canva_bola6)
 
 
             # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
-            canvaBola7 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
-            canvaBola7.create_oval(0, 0, 24, 24, fill="white", outline="black")
-            canvaBola7.configure(bg= "black")
-            canvaBola7.place(x = 560 + c, y = 236.5 )
-            bolasSemPreencher.append(canvaBola7)
+            canva_bola7 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
+            canva_bola7.create_oval(0, 0, 24, 24, fill="white", outline="black")
+            canva_bola7.configure(bg= "black")
+            canva_bola7.place(x = 560 + c, y = 236.5 )
+            bolas_sem_preencher.append(canva_bola7)
 
 
             # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
-            canvaBola8 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
-            canvaBola8.create_oval(0, 0, 24, 24, fill="white", outline="black")
-            canvaBola8.configure(bg= "black")
-            canvaBola8.place(x = 560 + c, y = 190 )
-            bolasSemPreencher.append(canvaBola8)
+            canva_bola8 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
+            canva_bola8.create_oval(0, 0, 24, 24, fill="white", outline="black")
+            canva_bola8.configure(bg= "black")
+            canva_bola8.place(x = 560 + c, y = 190 )
+            bolas_sem_preencher.append(canva_bola8)
 
 
             # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
-            canvaBola9 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
-            canvaBola9.create_oval(0, 0, 24, 24, fill="white", outline="black")
-            canvaBola9.configure(bg= "black")
-            canvaBola9.place(x = 560 + c, y = 142 )
-            bolasSemPreencher.append(canvaBola9)
+            canva_bola9 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
+            canva_bola9.create_oval(0, 0, 24, 24, fill="white", outline="black")
+            canva_bola9.configure(bg= "black")
+            canva_bola9.place(x = 560 + c, y = 142 )
+            bolas_sem_preencher.append(canva_bola9)
 
 
             # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
-            canvaBola10 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
-            canvaBola10.create_oval(0, 0, 24, 24, fill="white", outline="black")
-            canvaBola10.configure(bg= "black")
-            canvaBola10.place(x = 560 + c, y = 96 )
-            bolasSemPreencher.append(canvaBola10)
+            canva_bola10 = tk.Canvas(tela, width=25.2, height=24.3, highlightthickness=0)
+            canva_bola10.create_oval(0, 0, 24, 24, fill="white", outline="black")
+            canva_bola10.configure(bg= "black")
+            canva_bola10.place(x = 560 + c, y = 96 )
+            bolas_sem_preencher.append(canva_bola10)
 
 
         instruir = tk.Label(tela, text="DESCUBRA A ORDEM CORRETA DAS CORES.", bg="white", fg="black", font=("Times_New_Roman",12))
@@ -257,16 +256,16 @@ def moverDireita():
         v = 0
 
         # Estrutura de repetição para a criação das bolas que foram selecionadas aleatóriamente
-        for resultado in range(0, 2):  
+        for _ in range(0, 2):  
 
             # Cria o fundo do canvas que fica atrás da bola
-            respostaCerta = tk.Canvas(tela, width=45, height=45, highlightthickness=0)
+            resposta_certa = tk.Canvas(tela, width=45, height=45, highlightthickness=0)
             # Cria a bola
-            respostaCerta.create_oval(0, 0, 40, 40, fill="white", outline="black")
+            resposta_certa.create_oval(0, 0, 40, 40, fill="white", outline="black")
             # Configura o canvas para branco
-            respostaCerta.configure(bg="white")
+            resposta_certa.configure(bg="white")
             # posiciona a bola na tela
-            respostaCerta.place(x = 80 + v, y = 320)
+            resposta_certa.place(x = 80 + v, y = 320)
 
             
             # Soma 90 ao contador 
@@ -277,16 +276,16 @@ def moverDireita():
         t = 0
 
         # Estrutura de repetição para a criação das bolas que foram selecionadas aleatóriamente
-        for resultado in range(0, 2):  
+        for _ in range(0, 2):  
 
             # Cria o fundo do canvas que fica atrás da bola
-            respostaCerta = tk.Canvas(tela, width=45, height=45, highlightthickness=0)
+            resposta_certa = tk.Canvas(tela, width=45, height=45, highlightthickness=0)
             # Cria a bola
-            respostaCerta.create_oval(0, 0, 40, 40, fill="black", outline="black")
+            resposta_certa.create_oval(0, 0, 40, 40, fill="black", outline="black")
             # Configura o canvas para branco
-            respostaCerta.configure(bg="white")
+            resposta_certa.configure(bg="white")
             # posiciona a bola na tela
-            respostaCerta.place(x = 80 + t, y = 455)
+            resposta_certa.place(x = 80 + t, y = 455)
 
             
             # Soma 90 ao contador 
@@ -294,699 +293,698 @@ def moverDireita():
 
 
         # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
-        bolasResultado = []
+        bolas_resultado = []
 
         # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
-        bolasResultado2 = []
+        bolas_resultado2 = []
 
         # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
-        bolasResultado3 = []
+        bolas_resultado3 = []
 
         # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
-        bolasResultado4 = []
+        bolas_resultado4 = []
 
         # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
-        bolasResultado5 = []
+        bolas_resultado5 = []
 
         # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
-        bolasResultado6 = []
+        bolas_resultado6 = []
 
         # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
-        bolasResultado7 = []
+        bolas_resultado7 = []
 
         # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
-        bolasResultado8 = []
+        bolas_resultado8 = []
 
         # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
-        bolasResultado9 = []
+        bolas_resultado9 = []
 
         # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
-        bolasResultado10 = []
-
+        bolas_resultado10 = []
 
 
         # Função verificadora de lista
-        def verificarLista():
+        def verificar_lista():
             
             # Condicional que avalia se há quatro cores na lista
-            if len(bolasResultado) == 4:
+            if len(bolas_resultado) == 4:
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado[0] in set(sorteada) and bolasResultado[0] != sorteada[0]:
-                    listaBolas[19].itemconfig(1, fill="white")
+                if bolas_resultado[0] in set(sorteada) and bolas_resultado[0] != sorteada[0]:
+                    lista_bolas[19].itemconfig(1, fill="white")
 
-                if bolasResultado[1] in set(sorteada) and bolasResultado[1] != sorteada[1]:
-                    listaBolas[39].itemconfig(1, fill="white")
+                if bolas_resultado[1] in set(sorteada) and bolas_resultado[1] != sorteada[1]:
+                    lista_bolas[39].itemconfig(1, fill="white")
 
-                if bolasResultado[2] in set(sorteada) and bolasResultado[2] != sorteada[2]:
-                    listaBolas[38].itemconfig(1, fill="white")
+                if bolas_resultado[2] in set(sorteada) and bolas_resultado[2] != sorteada[2]:
+                    lista_bolas[38].itemconfig(1, fill="white")
 
-                if bolasResultado[3] in set(sorteada) and bolasResultado[3] != sorteada[3]:
-                    listaBolas[18].itemconfig(1, fill="white")
+                if bolas_resultado[3] in set(sorteada) and bolas_resultado[3] != sorteada[3]:
+                    lista_bolas[18].itemconfig(1, fill="white")
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada                
-                if bolasResultado[0] in set(sorteada) and bolasResultado[0] == sorteada[0]:
-                    listaBolas[19].itemconfig(1, fill="black")
+                if bolas_resultado[0] in set(sorteada) and bolas_resultado[0] == sorteada[0]:
+                    lista_bolas[19].itemconfig(1, fill="black")
 
-                if bolasResultado[1] in set(sorteada) and bolasResultado[1] == sorteada[1]:
-                    listaBolas[39].itemconfig(1, fill="black")
+                if bolas_resultado[1] in set(sorteada) and bolas_resultado[1] == sorteada[1]:
+                    lista_bolas[39].itemconfig(1, fill="black")
 
-                if bolasResultado[2] in set(sorteada) and bolasResultado[2] == sorteada[2]:
-                    listaBolas[38].itemconfig(1, fill="black")
+                if bolas_resultado[2] in set(sorteada) and bolas_resultado[2] == sorteada[2]:
+                    lista_bolas[38].itemconfig(1, fill="black")
 
-                if bolasResultado[3] in set(sorteada) and bolasResultado[3] == sorteada[3]:
-                    listaBolas[18].itemconfig(1, fill="black")
+                if bolas_resultado[3] in set(sorteada) and bolas_resultado[3] == sorteada[3]:
+                    lista_bolas[18].itemconfig(1, fill="black")
 
 
             # Condicional que avalia se há quatro cores na lista
-            if len(bolasResultado2) == 4:
+            if len(bolas_resultado2) == 4:
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada                
-                if bolasResultado2[0] in set(sorteada) and bolasResultado2[0] != sorteada[0]:
-                    listaBolas[17].itemconfig(1, fill="white")
+                if bolas_resultado2[0] in set(sorteada) and bolas_resultado2[0] != sorteada[0]:
+                    lista_bolas[17].itemconfig(1, fill="white")
 
-                if bolasResultado2[1] in set(sorteada) and bolasResultado2[1] != sorteada[1]:
-                    listaBolas[37].itemconfig(1, fill="white")
+                if bolas_resultado2[1] in set(sorteada) and bolas_resultado2[1] != sorteada[1]:
+                    lista_bolas[37].itemconfig(1, fill="white")
 
-                if bolasResultado2[2] in set(sorteada) and bolasResultado2[2] != sorteada[2]:
-                    listaBolas[36].itemconfig(1, fill="white")
+                if bolas_resultado2[2] in set(sorteada) and bolas_resultado2[2] != sorteada[2]:
+                    lista_bolas[36].itemconfig(1, fill="white")
 
-                if bolasResultado2[3] in set(sorteada) and bolasResultado2[3] != sorteada[3]:
-                    listaBolas[16].itemconfig(1, fill="white")
+                if bolas_resultado2[3] in set(sorteada) and bolas_resultado2[3] != sorteada[3]:
+                    lista_bolas[16].itemconfig(1, fill="white")
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada                
-                if bolasResultado2[0] in set(sorteada) and bolasResultado2[0] == sorteada[0]:
-                    listaBolas[17].itemconfig(1, fill="black")
+                if bolas_resultado2[0] in set(sorteada) and bolas_resultado2[0] == sorteada[0]:
+                    lista_bolas[17].itemconfig(1, fill="black")
 
-                if bolasResultado2[1] in set(sorteada) and bolasResultado2[1] == sorteada[1]:
-                    listaBolas[37].itemconfig(1, fill="black")
+                if bolas_resultado2[1] in set(sorteada) and bolas_resultado2[1] == sorteada[1]:
+                    lista_bolas[37].itemconfig(1, fill="black")
 
-                if bolasResultado2[2] in set(sorteada) and bolasResultado2[2] == sorteada[2]:
-                    listaBolas[36].itemconfig(1, fill="black")
+                if bolas_resultado2[2] in set(sorteada) and bolas_resultado2[2] == sorteada[2]:
+                    lista_bolas[36].itemconfig(1, fill="black")
 
-                if bolasResultado2[3] in set(sorteada) and bolasResultado2[3] == sorteada[3]:
-                    listaBolas[16].itemconfig(1, fill="black")
+                if bolas_resultado2[3] in set(sorteada) and bolas_resultado2[3] == sorteada[3]:
+                    lista_bolas[16].itemconfig(1, fill="black")
 
 
             # Condicional que avalia se há quatro cores na lista
-            if len(bolasResultado3) == 4:
+            if len(bolas_resultado3) == 4:
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada                
-                if bolasResultado3[0] in set(sorteada) and bolasResultado3[0] != sorteada[0]:
-                    listaBolas[15].itemconfig(1, fill="white")
+                if bolas_resultado3[0] in set(sorteada) and bolas_resultado3[0] != sorteada[0]:
+                    lista_bolas[15].itemconfig(1, fill="white")
 
-                if bolasResultado3[1] in set(sorteada) and bolasResultado3[1] != sorteada[1]:
-                    listaBolas[35].itemconfig(1, fill="white")
+                if bolas_resultado3[1] in set(sorteada) and bolas_resultado3[1] != sorteada[1]:
+                    lista_bolas[35].itemconfig(1, fill="white")
 
-                if bolasResultado3[2] in set(sorteada) and bolasResultado3[2] != sorteada[2]:
-                    listaBolas[34].itemconfig(1, fill="white")
+                if bolas_resultado3[2] in set(sorteada) and bolas_resultado3[2] != sorteada[2]:
+                    lista_bolas[34].itemconfig(1, fill="white")
 
-                if bolasResultado3[3] in set(sorteada) and bolasResultado3[3] != sorteada[3]:
-                    listaBolas[14].itemconfig(1, fill="white")
+                if bolas_resultado3[3] in set(sorteada) and bolas_resultado3[3] != sorteada[3]:
+                    lista_bolas[14].itemconfig(1, fill="white")
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada               
-                if bolasResultado3[0] in set(sorteada) and bolasResultado3[0] == sorteada[0]:
-                    listaBolas[15].itemconfig(1, fill="black")
+                if bolas_resultado3[0] in set(sorteada) and bolas_resultado3[0] == sorteada[0]:
+                    lista_bolas[15].itemconfig(1, fill="black")
 
-                if bolasResultado3[1] in set(sorteada) and bolasResultado3[1] == sorteada[1]:
-                    listaBolas[35].itemconfig(1, fill="black")
+                if bolas_resultado3[1] in set(sorteada) and bolas_resultado3[1] == sorteada[1]:
+                    lista_bolas[35].itemconfig(1, fill="black")
 
-                if bolasResultado3[2] in set(sorteada) and bolasResultado3[2] == sorteada[2]:
-                    listaBolas[34].itemconfig(1, fill="black")
+                if bolas_resultado3[2] in set(sorteada) and bolas_resultado3[2] == sorteada[2]:
+                    lista_bolas[34].itemconfig(1, fill="black")
 
-                if bolasResultado3[3] in set(sorteada) and bolasResultado3[3] == sorteada[3]:
-                    listaBolas[14].itemconfig(1, fill="black")
+                if bolas_resultado3[3] in set(sorteada) and bolas_resultado3[3] == sorteada[3]:
+                    lista_bolas[14].itemconfig(1, fill="black")
 
 
             # Condicional que avalia se há quatro cores na lista
-            if len(bolasResultado4) == 4:
+            if len(bolas_resultado4) == 4:
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado4[0] in set(sorteada) and bolasResultado4[0] != sorteada[0]:
-                    listaBolas[13].itemconfig(1, fill="white")
+                if bolas_resultado4[0] in set(sorteada) and bolas_resultado4[0] != sorteada[0]:
+                    lista_bolas[13].itemconfig(1, fill="white")
 
-                if bolasResultado4[1] in set(sorteada) and bolasResultado4[1] != sorteada[1]:
-                    listaBolas[33].itemconfig(1, fill="white")
+                if bolas_resultado4[1] in set(sorteada) and bolas_resultado4[1] != sorteada[1]:
+                    lista_bolas[33].itemconfig(1, fill="white")
 
-                if bolasResultado4[2] in set(sorteada) and bolasResultado4[2] != sorteada[2]:
-                    listaBolas[32].itemconfig(1, fill="white")
+                if bolas_resultado4[2] in set(sorteada) and bolas_resultado4[2] != sorteada[2]:
+                    lista_bolas[32].itemconfig(1, fill="white")
 
-                if bolasResultado4[3] in set(sorteada) and bolasResultado4[3] != sorteada[3]:
-                    listaBolas[12].itemconfig(1, fill="white")
+                if bolas_resultado4[3] in set(sorteada) and bolas_resultado4[3] != sorteada[3]:
+                    lista_bolas[12].itemconfig(1, fill="white")
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada                
-                if bolasResultado4[0] in set(sorteada) and bolasResultado4[0] == sorteada[0]:
-                    listaBolas[13].itemconfig(1, fill="black")
+                if bolas_resultado4[0] in set(sorteada) and bolas_resultado4[0] == sorteada[0]:
+                    lista_bolas[13].itemconfig(1, fill="black")
 
-                if bolasResultado4[1] in set(sorteada) and bolasResultado4[1] == sorteada[1]:
-                    listaBolas[33].itemconfig(1, fill="black")
+                if bolas_resultado4[1] in set(sorteada) and bolas_resultado4[1] == sorteada[1]:
+                    lista_bolas[33].itemconfig(1, fill="black")
 
-                if bolasResultado4[2] in set(sorteada) and bolasResultado4[2] == sorteada[2]:
-                    listaBolas[32].itemconfig(1, fill="black")
+                if bolas_resultado4[2] in set(sorteada) and bolas_resultado4[2] == sorteada[2]:
+                    lista_bolas[32].itemconfig(1, fill="black")
 
-                if bolasResultado4[3] in set(sorteada) and bolasResultado4[3] == sorteada[3]:
-                    listaBolas[12].itemconfig(1, fill="black")
+                if bolas_resultado4[3] in set(sorteada) and bolas_resultado4[3] == sorteada[3]:
+                    lista_bolas[12].itemconfig(1, fill="black")
 
 
             # Condicional que avalia se há quatro cores na lista
-            if len(bolasResultado5) == 4:
+            if len(bolas_resultado5) == 4:
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado5[0] in set(sorteada) and bolasResultado5[0] != sorteada[0]:
-                    listaBolas[11].itemconfig(1, fill="white")
+                if bolas_resultado5[0] in set(sorteada) and bolas_resultado5[0] != sorteada[0]:
+                    lista_bolas[11].itemconfig(1, fill="white")
 
-                if bolasResultado5[1] in set(sorteada) and bolasResultado5[1] != sorteada[1]:
-                    listaBolas[31].itemconfig(1, fill="white")
+                if bolas_resultado5[1] in set(sorteada) and bolas_resultado5[1] != sorteada[1]:
+                    lista_bolas[31].itemconfig(1, fill="white")
 
-                if bolasResultado5[2] in set(sorteada) and bolasResultado5[2] != sorteada[2]:
-                    listaBolas[30].itemconfig(1, fill="white")
+                if bolas_resultado5[2] in set(sorteada) and bolas_resultado5[2] != sorteada[2]:
+                    lista_bolas[30].itemconfig(1, fill="white")
 
-                if bolasResultado5[3] in set(sorteada) and bolasResultado5[3] != sorteada[3]:
-                    listaBolas[10].itemconfig(1, fill="white")
+                if bolas_resultado5[3] in set(sorteada) and bolas_resultado5[3] != sorteada[3]:
+                    lista_bolas[10].itemconfig(1, fill="white")
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada   
-                if bolasResultado5[0] in set(sorteada) and bolasResultado5[0] == sorteada[0]:
-                    listaBolas[11].itemconfig(1, fill="black")
+                if bolas_resultado5[0] in set(sorteada) and bolas_resultado5[0] == sorteada[0]:
+                    lista_bolas[11].itemconfig(1, fill="black")
 
-                if bolasResultado5[1] in set(sorteada) and bolasResultado5[1] == sorteada[1]:
-                    listaBolas[31].itemconfig(1, fill="black")
+                if bolas_resultado5[1] in set(sorteada) and bolas_resultado5[1] == sorteada[1]:
+                    lista_bolas[31].itemconfig(1, fill="black")
 
-                if bolasResultado5[2] in set(sorteada) and bolasResultado5[2] == sorteada[2]:
-                    listaBolas[30].itemconfig(1, fill="black")
+                if bolas_resultado5[2] in set(sorteada) and bolas_resultado5[2] == sorteada[2]:
+                    lista_bolas[30].itemconfig(1, fill="black")
 
-                if bolasResultado5[3] in set(sorteada) and bolasResultado5[3] == sorteada[3]:
-                    listaBolas[10].itemconfig(1, fill="black")
-
-
-            # Condicional que avalia se há quatro cores na lista
-            if len(bolasResultado6) == 4:
-
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado6[0] in set(sorteada) and bolasResultado6[0] != sorteada[0]:
-                    listaBolas[9].itemconfig(1, fill="white")
-
-                if bolasResultado6[1] in set(sorteada) and bolasResultado6[1] != sorteada[1]:
-                    listaBolas[29].itemconfig(1, fill="white")
-
-                if bolasResultado6[2] in set(sorteada) and bolasResultado6[2] != sorteada[2]:
-                    listaBolas[28].itemconfig(1, fill="white")
-
-                if bolasResultado6[3] in set(sorteada) and bolasResultado6[3] != sorteada[3]:
-                    listaBolas[8].itemconfig(1, fill="white")
-
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado6[0] in set(sorteada) and bolasResultado6[0] == sorteada[0]:
-                    listaBolas[9].itemconfig(1, fill="black")
-
-                if bolasResultado6[1] in set(sorteada) and bolasResultado6[1] == sorteada[1]:
-                    listaBolas[29].itemconfig(1, fill="black")
-
-                if bolasResultado6[2] in set(sorteada) and bolasResultado6[2] == sorteada[2]:
-                    listaBolas[28].itemconfig(1, fill="black")
-
-                if bolasResultado6[3] in set(sorteada) and bolasResultado6[3] == sorteada[3]:
-                    listaBolas[8].itemconfig(1, fill="black")
+                if bolas_resultado5[3] in set(sorteada) and bolas_resultado5[3] == sorteada[3]:
+                    lista_bolas[10].itemconfig(1, fill="black")
 
 
             # Condicional que avalia se há quatro cores na lista
-            if len(bolasResultado7) == 4:
+            if len(bolas_resultado6) == 4:
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado7[0] in set(sorteada) and bolasResultado7[0] != sorteada[0]:
-                    listaBolas[7].itemconfig(1, fill="white")
+                if bolas_resultado6[0] in set(sorteada) and bolas_resultado6[0] != sorteada[0]:
+                    lista_bolas[9].itemconfig(1, fill="white")
 
-                if bolasResultado7[1] in set(sorteada) and bolasResultado7[1] != sorteada[1]:
-                    listaBolas[27].itemconfig(1, fill="white")
+                if bolas_resultado6[1] in set(sorteada) and bolas_resultado6[1] != sorteada[1]:
+                    lista_bolas[29].itemconfig(1, fill="white")
 
-                if bolasResultado7[2] in set(sorteada) and bolasResultado7[2] != sorteada[2]:
-                    listaBolas[26].itemconfig(1, fill="white")
+                if bolas_resultado6[2] in set(sorteada) and bolas_resultado6[2] != sorteada[2]:
+                    lista_bolas[28].itemconfig(1, fill="white")
 
-                if bolasResultado7[3] in set(sorteada) and bolasResultado7[3] != sorteada[3]:
-                    listaBolas[6].itemconfig(1, fill="white")
+                if bolas_resultado6[3] in set(sorteada) and bolas_resultado6[3] != sorteada[3]:
+                    lista_bolas[8].itemconfig(1, fill="white")
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado7[0] in set(sorteada) and bolasResultado7[0] == sorteada[0]:
-                    listaBolas[7].itemconfig(1, fill="black")
+                if bolas_resultado6[0] in set(sorteada) and bolas_resultado6[0] == sorteada[0]:
+                    lista_bolas[9].itemconfig(1, fill="black")
 
-                if bolasResultado7[1] in set(sorteada) and bolasResultado7[1] == sorteada[1]:
-                    listaBolas[27].itemconfig(1, fill="black")
+                if bolas_resultado6[1] in set(sorteada) and bolas_resultado6[1] == sorteada[1]:
+                    lista_bolas[29].itemconfig(1, fill="black")
 
-                if bolasResultado7[2] in set(sorteada) and bolasResultado7[2] == sorteada[2]:
-                    listaBolas[26].itemconfig(1, fill="black")
+                if bolas_resultado6[2] in set(sorteada) and bolas_resultado6[2] == sorteada[2]:
+                    lista_bolas[28].itemconfig(1, fill="black")
 
-                if bolasResultado7[3] in set(sorteada) and bolasResultado7[3] == sorteada[3]:
-                    listaBolas[6].itemconfig(1, fill="black")
+                if bolas_resultado6[3] in set(sorteada) and bolas_resultado6[3] == sorteada[3]:
+                    lista_bolas[8].itemconfig(1, fill="black")
 
 
             # Condicional que avalia se há quatro cores na lista
-            if len(bolasResultado8) == 4:
-                
+            if len(bolas_resultado7) == 4:
+
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado8[0] in set(sorteada) and bolasResultado8[0] != sorteada[0]:
-                    listaBolas[5].itemconfig(1, fill="white")
-                
-                if bolasResultado8[1] in set(sorteada) and bolasResultado8[1] != sorteada[1]:
-                    listaBolas[25].itemconfig(1, fill="white")
-                
-                if bolasResultado8[2] in set(sorteada) and bolasResultado8[2] != sorteada[2]:
-                    listaBolas[24].itemconfig(1, fill="white")
-                
-                if bolasResultado8[3] in set(sorteada) and bolasResultado8[3] != sorteada[3]:
-                    listaBolas[4].itemconfig(1, fill="white")
-                
+                if bolas_resultado7[0] in set(sorteada) and bolas_resultado7[0] != sorteada[0]:
+                    lista_bolas[7].itemconfig(1, fill="white")
+
+                if bolas_resultado7[1] in set(sorteada) and bolas_resultado7[1] != sorteada[1]:
+                    lista_bolas[27].itemconfig(1, fill="white")
+
+                if bolas_resultado7[2] in set(sorteada) and bolas_resultado7[2] != sorteada[2]:
+                    lista_bolas[26].itemconfig(1, fill="white")
+
+                if bolas_resultado7[3] in set(sorteada) and bolas_resultado7[3] != sorteada[3]:
+                    lista_bolas[6].itemconfig(1, fill="white")
+
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado8[0] in set(sorteada) and bolasResultado8[0] == sorteada[0]:
-                    listaBolas[5].itemconfig(1, fill="black")
-                
-                if bolasResultado8[1] in set(sorteada) and bolasResultado8[1] == sorteada[1]:
-                    listaBolas[25].itemconfig(1, fill="black")
-                
-                if bolasResultado8[2] in set(sorteada) and bolasResultado8[2] == sorteada[2]:
-                    listaBolas[24].itemconfig(1, fill="black")
-                
-                if bolasResultado8[3] in set(sorteada) and bolasResultado8[3] == sorteada[3]:
-                    listaBolas[4].itemconfig(1, fill="black")
+                if bolas_resultado7[0] in set(sorteada) and bolas_resultado7[0] == sorteada[0]:
+                    lista_bolas[7].itemconfig(1, fill="black")
+
+                if bolas_resultado7[1] in set(sorteada) and bolas_resultado7[1] == sorteada[1]:
+                    lista_bolas[27].itemconfig(1, fill="black")
+
+                if bolas_resultado7[2] in set(sorteada) and bolas_resultado7[2] == sorteada[2]:
+                    lista_bolas[26].itemconfig(1, fill="black")
+
+                if bolas_resultado7[3] in set(sorteada) and bolas_resultado7[3] == sorteada[3]:
+                    lista_bolas[6].itemconfig(1, fill="black")
 
 
             # Condicional que avalia se há quatro cores na lista
-            if len(bolasResultado9) == 4:
+            if len(bolas_resultado8) == 4:
                 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado9[0] in set(sorteada) and bolasResultado9[0] != sorteada[0]:
-                    listaBolas[3].itemconfig(1, fill="white")
+                if bolas_resultado8[0] in set(sorteada) and bolas_resultado8[0] != sorteada[0]:
+                    lista_bolas[5].itemconfig(1, fill="white")
+                
+                if bolas_resultado8[1] in set(sorteada) and bolas_resultado8[1] != sorteada[1]:
+                    lista_bolas[25].itemconfig(1, fill="white")
+                
+                if bolas_resultado8[2] in set(sorteada) and bolas_resultado8[2] != sorteada[2]:
+                    lista_bolas[24].itemconfig(1, fill="white")
+                
+                if bolas_resultado8[3] in set(sorteada) and bolas_resultado8[3] != sorteada[3]:
+                    lista_bolas[4].itemconfig(1, fill="white")
+                
+                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
+                if bolas_resultado8[0] in set(sorteada) and bolas_resultado8[0] == sorteada[0]:
+                    lista_bolas[5].itemconfig(1, fill="black")
+                
+                if bolas_resultado8[1] in set(sorteada) and bolas_resultado8[1] == sorteada[1]:
+                    lista_bolas[25].itemconfig(1, fill="black")
+                
+                if bolas_resultado8[2] in set(sorteada) and bolas_resultado8[2] == sorteada[2]:
+                    lista_bolas[24].itemconfig(1, fill="black")
+                
+                if bolas_resultado8[3] in set(sorteada) and bolas_resultado8[3] == sorteada[3]:
+                    lista_bolas[4].itemconfig(1, fill="black")
 
-                if bolasResultado9[1] in set(sorteada) and bolasResultado9[1] != sorteada[1]:
-                    listaBolas[23].itemconfig(1, fill="white")
 
-                if bolasResultado9[2] in set(sorteada) and bolasResultado9[2] != sorteada[2]:
-                    listaBolas[22].itemconfig(1, fill="white")
+            # Condicional que avalia se há quatro cores na lista
+            if len(bolas_resultado9) == 4:
+                
+                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
+                if bolas_resultado9[0] in set(sorteada) and bolas_resultado9[0] != sorteada[0]:
+                    lista_bolas[3].itemconfig(1, fill="white")
 
-                if bolasResultado9[3] in set(sorteada) and bolasResultado9[3] != sorteada[3]:
-                    listaBolas[2].itemconfig(1, fill="white")
+                if bolas_resultado9[1] in set(sorteada) and bolas_resultado9[1] != sorteada[1]:
+                    lista_bolas[23].itemconfig(1, fill="white")
+
+                if bolas_resultado9[2] in set(sorteada) and bolas_resultado9[2] != sorteada[2]:
+                    lista_bolas[22].itemconfig(1, fill="white")
+
+                if bolas_resultado9[3] in set(sorteada) and bolas_resultado9[3] != sorteada[3]:
+                    lista_bolas[2].itemconfig(1, fill="white")
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado9[0] in set(sorteada) and bolasResultado9[0] == sorteada[0]:
-                    listaBolas[3].itemconfig(1, fill="black")
+                if bolas_resultado9[0] in set(sorteada) and bolas_resultado9[0] == sorteada[0]:
+                    lista_bolas[3].itemconfig(1, fill="black")
 
-                if bolasResultado9[1] in set(sorteada) and bolasResultado9[1] == sorteada[1]:
-                    listaBolas[23].itemconfig(1, fill="black")
+                if bolas_resultado9[1] in set(sorteada) and bolas_resultado9[1] == sorteada[1]:
+                    lista_bolas[23].itemconfig(1, fill="black")
 
-                if bolasResultado9[2] in set(sorteada) and bolasResultado9[2] == sorteada[2]:
-                    listaBolas[22].itemconfig(1, fill="black")
+                if bolas_resultado9[2] in set(sorteada) and bolas_resultado9[2] == sorteada[2]:
+                    lista_bolas[22].itemconfig(1, fill="black")
 
-                if bolasResultado9[3] in set(sorteada) and bolasResultado9[3] == sorteada[3]:
-                    listaBolas[2].itemconfig(1, fill="black")
+                if bolas_resultado9[3] in set(sorteada) and bolas_resultado9[3] == sorteada[3]:
+                    lista_bolas[2].itemconfig(1, fill="black")
 
 
             # Condicional que avalia se há quatro cores na lista   
-            if len(bolasResultado10) == 4:
+            if len(bolas_resultado10) == 4:
                 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado10[0] in set(sorteada) and bolasResultado10[0] != sorteada[0]:
-                    listaBolas[1].itemconfig(1, fill="white")
+                if bolas_resultado10[0] in set(sorteada) and bolas_resultado10[0] != sorteada[0]:
+                    lista_bolas[1].itemconfig(1, fill="white")
                 
-                if bolasResultado10[1] in set(sorteada) and bolasResultado10[1] != sorteada[1]:
-                    listaBolas[21].itemconfig(1, fill="white")
+                if bolas_resultado10[1] in set(sorteada) and bolas_resultado10[1] != sorteada[1]:
+                    lista_bolas[21].itemconfig(1, fill="white")
                 
-                if bolasResultado10[2] in set(sorteada) and bolasResultado10[2] != sorteada[2]:
-                    listaBolas[20].itemconfig(1, fill="white")
+                if bolas_resultado10[2] in set(sorteada) and bolas_resultado10[2] != sorteada[2]:
+                    lista_bolas[20].itemconfig(1, fill="white")
                 
-                if bolasResultado10[3] in set(sorteada) and bolasResultado10[3] != sorteada[3]:
-                    listaBolas[0].itemconfig(1, fill="white")
+                if bolas_resultado10[3] in set(sorteada) and bolas_resultado10[3] != sorteada[3]:
+                    lista_bolas[0].itemconfig(1, fill="white")
                 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
-                if bolasResultado10[0] in set(sorteada) and bolasResultado10[0] == sorteada[0]:
-                    listaBolas[1].itemconfig(1, fill="black")
+                if bolas_resultado10[0] in set(sorteada) and bolas_resultado10[0] == sorteada[0]:
+                    lista_bolas[1].itemconfig(1, fill="black")
                 
-                if bolasResultado10[1] in set(sorteada) and bolasResultado10[1] == sorteada[1]:
-                    listaBolas[21].itemconfig(1, fill="black")
+                if bolas_resultado10[1] in set(sorteada) and bolas_resultado10[1] == sorteada[1]:
+                    lista_bolas[21].itemconfig(1, fill="black")
                 
-                if bolasResultado10[2] in set(sorteada) and bolasResultado10[2] == sorteada[2]:
-                    listaBolas[20].itemconfig(1, fill="black")
+                if bolas_resultado10[2] in set(sorteada) and bolas_resultado10[2] == sorteada[2]:
+                    lista_bolas[20].itemconfig(1, fill="black")
                 
-                if bolasResultado10[3] in set(sorteada) and bolasResultado10[3] == sorteada[3]:
-                    listaBolas[0].itemconfig(1, fill="black")
+                if bolas_resultado10[3] in set(sorteada) and bolas_resultado10[3] == sorteada[3]:
+                    lista_bolas[0].itemconfig(1, fill="black")
 
 
                 # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
-                if bolasResultado[0] != sorteada[0] or bolasResultado[1] != sorteada[1] or bolasResultado[2] != sorteada[2] or bolasResultado[3] != sorteada[3]:
+                if bolas_resultado[0] != sorteada[0] or bolas_resultado[1] != sorteada[1] or bolas_resultado[2] != sorteada[2] or bolas_resultado[3] != sorteada[3]:
                     # Limpa lista
-                    bolasResultado.clear()
+                    bolas_resultado.clear()
                     
                 # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
-                if bolasResultado2[0] != sorteada[0] or bolasResultado2[1] != sorteada[1] or bolasResultado2[2] != sorteada[2] or bolasResultado2[3] != sorteada[3]:
+                if bolas_resultado2[0] != sorteada[0] or bolas_resultado2[1] != sorteada[1] or bolas_resultado2[2] != sorteada[2] or bolas_resultado2[3] != sorteada[3]:
                     # Limpa lista
-                    bolasResultado2.clear()
+                    bolas_resultado2.clear()
                     
                 # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
-                if bolasResultado3[0] != sorteada[0] or bolasResultado3[1] != sorteada[1] or bolasResultado3[2] != sorteada[2] or bolasResultado3[3] != sorteada[3]:   
+                if bolas_resultado3[0] != sorteada[0] or bolas_resultado3[1] != sorteada[1] or bolas_resultado3[2] != sorteada[2] or bolas_resultado3[3] != sorteada[3]:   
                     # Limpa lista
-                    bolasResultado3.clear()
+                    bolas_resultado3.clear()
                     
                 # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
-                if bolasResultado4[0] != sorteada[0] or bolasResultado4[1] != sorteada[1] or bolasResultado4[2] != sorteada[2] or bolasResultado4[3] != sorteada[3]:      
+                if bolas_resultado4[0] != sorteada[0] or bolas_resultado4[1] != sorteada[1] or bolas_resultado4[2] != sorteada[2] or bolas_resultado4[3] != sorteada[3]:      
                     # Limpa lista
-                    bolasResultado4.clear()
+                    bolas_resultado4.clear()
                     
                 # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
-                if bolasResultado5[0] != sorteada[0] or bolasResultado5[1] != sorteada[1] or bolasResultado5[2] != sorteada[2] or bolasResultado5[3] != sorteada[3]:   
+                if bolas_resultado5[0] != sorteada[0] or bolas_resultado5[1] != sorteada[1] or bolas_resultado5[2] != sorteada[2] or bolas_resultado5[3] != sorteada[3]:   
                     # Limpa lista
-                    bolasResultado5.clear()
+                    bolas_resultado5.clear()
                     
                 # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
-                if bolasResultado6[0] != sorteada[0] or bolasResultado6[1] != sorteada[1] or bolasResultado6[2] != sorteada[2] or bolasResultado6[3] != sorteada[3]:      
+                if bolas_resultado6[0] != sorteada[0] or bolas_resultado6[1] != sorteada[1] or bolas_resultado6[2] != sorteada[2] or bolas_resultado6[3] != sorteada[3]:      
                     # Limpa lista
-                    bolasResultado6.clear()
+                    bolas_resultado6.clear()
                     
                 # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
-                if bolasResultado7[0] != sorteada[0] or bolasResultado7[1] != sorteada[1] or bolasResultado7[2] != sorteada[2] or bolasResultado7[3] != sorteada[3]:      
+                if bolas_resultado7[0] != sorteada[0] or bolas_resultado7[1] != sorteada[1] or bolas_resultado7[2] != sorteada[2] or bolas_resultado7[3] != sorteada[3]:      
                     # Limpa lista
-                    bolasResultado7.clear()
+                    bolas_resultado7.clear()
                     
                  # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
-                if bolasResultado8[0] != sorteada[0] or bolasResultado8[1] != sorteada[1] or bolasResultado8[2] != sorteada[2] or bolasResultado8[3] != sorteada[3]:     
+                if bolas_resultado8[0] != sorteada[0] or bolas_resultado8[1] != sorteada[1] or bolas_resultado8[2] != sorteada[2] or bolas_resultado8[3] != sorteada[3]:     
                     # Limpa lista
-                    bolasResultado8.clear()
+                    bolas_resultado8.clear()
                     
                 # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
-                if bolasResultado9[0] != sorteada[0] or bolasResultado9[1] != sorteada[1] or bolasResultado9[2] != sorteada[2] or bolasResultado9[3] != sorteada[3]:    
+                if bolas_resultado9[0] != sorteada[0] or bolas_resultado9[1] != sorteada[1] or bolas_resultado9[2] != sorteada[2] or bolas_resultado9[3] != sorteada[3]:    
                     # Limpa lista
-                    bolasResultado.clear()
+                    bolas_resultado.clear()
                     
                 # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições, limpa lista, cria botão de reiniciar, desabilita botões, declara derrota e mostra o resultado certo na tela
-                if bolasResultado10[0] != sorteada[0] or bolasResultado10[1] != sorteada[1] or bolasResultado10[2] != sorteada[2] or bolasResultado10[3] != sorteada[3]:
+                if bolas_resultado10[0] != sorteada[0] or bolas_resultado10[1] != sorteada[1] or bolas_resultado10[2] != sorteada[2] or bolas_resultado10[3] != sorteada[3]:
                         
-                    bolasResultado10.clear()
-                    criarBotaoReiniciar()
-                    desabilitarBotao()
-                    mostrarDerrota()  
+                    bolas_resultado10.clear()
+                    criar_botao_reiniciar()
+                    desabilitar_botao()
+                    mostrar_derrota()  
                     esconder.place_forget()
 
             
             # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada
-            if len(bolasResultado) == 4 and bolasResultado[0] == sorteada[0] and bolasResultado[1] == sorteada[1] and bolasResultado[2] == sorteada[2] and bolasResultado[3] == sorteada[3]:
+            if len(bolas_resultado) == 4 and bolas_resultado[0] == sorteada[0] and bolas_resultado[1] == sorteada[1] and bolas_resultado[2] == sorteada[2] and bolas_resultado[3] == sorteada[3]:
                 # Parâmentro teste
-                mostrarTriunfo()
-                desabilitarBotao()
-                criarBotaoReiniciar()
+                mostrar_triunfo()
+                desabilitar_botao()
+                criar_botao_reiniciar()
                 # Verifica a lista
-                bolasResultado.clear()
+                bolas_resultado.clear()
                 esconder.place_forget()
             
             # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada
-            if len(bolasResultado2) == 4 and bolasResultado2[0] == sorteada[0] and bolasResultado2[1] == sorteada[1] and bolasResultado2[2] == sorteada[2] and bolasResultado2[3] == sorteada[3]:
+            if len(bolas_resultado2) == 4 and bolas_resultado2[0] == sorteada[0] and bolas_resultado2[1] == sorteada[1] and bolas_resultado2[2] == sorteada[2] and bolas_resultado2[3] == sorteada[3]:
                 # Parâmetro de teste
-                mostrarTriunfo()
-                desabilitarBotao()
-                criarBotaoReiniciar()
+                mostrar_triunfo()
+                desabilitar_botao()
+                criar_botao_reiniciar()
                 # Verifica a lista
-                bolasResultado2.clear()
+                bolas_resultado2.clear()
                 esconder.place_forget()
 
             # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada
-            if len(bolasResultado3) == 4 and bolasResultado3[0] == sorteada[0] and bolasResultado3[1] == sorteada[1] and bolasResultado3[2] == sorteada[2] and bolasResultado3[3] == sorteada[3]:
+            if len(bolas_resultado3) == 4 and bolas_resultado3[0] == sorteada[0] and bolas_resultado3[1] == sorteada[1] and bolas_resultado3[2] == sorteada[2] and bolas_resultado3[3] == sorteada[3]:
                 # Parâmetro de teste
-                mostrarTriunfo()
-                desabilitarBotao()
-                criarBotaoReiniciar()
+                mostrar_triunfo()
+                desabilitar_botao()
+                criar_botao_reiniciar()
                 # Verifica a lista
-                bolasResultado3.clear()
+                bolas_resultado3.clear()
                 esconder.place_forget()
 
             # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada
-            if len(bolasResultado4) == 4 and bolasResultado4[0] == sorteada[0] and bolasResultado4[1] == sorteada[1] and bolasResultado4[2] == sorteada[2] and bolasResultado4[3] == sorteada[3]:
+            if len(bolas_resultado4) == 4 and bolas_resultado4[0] == sorteada[0] and bolas_resultado4[1] == sorteada[1] and bolas_resultado4[2] == sorteada[2] and bolas_resultado4[3] == sorteada[3]:
                 # Parâmetro de teste
-                mostrarTriunfo()
-                desabilitarBotao()
-                criarBotaoReiniciar()
+                mostrar_triunfo()
+                desabilitar_botao()
+                criar_botao_reiniciar()
                 # Verifica a lista
-                bolasResultado4.clear()
+                bolas_resultado4.clear()
                 esconder.place_forget()
 
             # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada
-            if len(bolasResultado5) == 4 and bolasResultado5[0] == sorteada[0] and bolasResultado5[1] == sorteada[1] and bolasResultado5[2] == sorteada[2] and bolasResultado5[3] == sorteada[3]:
+            if len(bolas_resultado5) == 4 and bolas_resultado5[0] == sorteada[0] and bolas_resultado5[1] == sorteada[1] and bolas_resultado5[2] == sorteada[2] and bolas_resultado5[3] == sorteada[3]:
                 # Parâmetro de teste
-                mostrarTriunfo()
-                desabilitarBotao()
-                criarBotaoReiniciar()
+                mostrar_triunfo()
+                desabilitar_botao()
+                criar_botao_reiniciar()
                 # Verifica a lista
-                bolasResultado5.clear()
+                bolas_resultado5.clear()
                 esconder.place_forget()
 
             # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada
-            if len(bolasResultado6) == 4 and bolasResultado6[0] == sorteada[0] and bolasResultado6[1] == sorteada[1] and bolasResultado6[2] == sorteada[2] and bolasResultado6[3] == sorteada[3]:
+            if len(bolas_resultado6) == 4 and bolas_resultado6[0] == sorteada[0] and bolas_resultado6[1] == sorteada[1] and bolas_resultado6[2] == sorteada[2] and bolas_resultado6[3] == sorteada[3]:
                 # Parâmetro de teste
-                mostrarTriunfo()
-                desabilitarBotao()
-                criarBotaoReiniciar()
+                mostrar_triunfo()
+                desabilitar_botao()
+                criar_botao_reiniciar()
                 # Verifica a lista
-                bolasResultado6.clear()
+                bolas_resultado6.clear()
                 esconder.place_forget()
 
             # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada           
-            if len(bolasResultado7) == 4 and bolasResultado7[0] == sorteada[0] and bolasResultado7[1] == sorteada[1] and bolasResultado7[2] == sorteada[2] and bolasResultado7[3] == sorteada[3]:
+            if len(bolas_resultado7) == 4 and bolas_resultado7[0] == sorteada[0] and bolas_resultado7[1] == sorteada[1] and bolas_resultado7[2] == sorteada[2] and bolas_resultado7[3] == sorteada[3]:
                 # Parâmetro teste
-                mostrarTriunfo()
-                desabilitarBotao()
-                criarBotaoReiniciar()
+                mostrar_triunfo()
+                desabilitar_botao()
+                criar_botao_reiniciar()
                 # Verifica a lista
-                bolasResultado7.clear()
+                bolas_resultado7.clear()
                 esconder.place_forget()
 
             # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada           
-            if len(bolasResultado8) == 4 and bolasResultado8[0] == sorteada[0] and bolasResultado8[1] == sorteada[1] and bolasResultado8[2] == sorteada[2] and bolasResultado8[3] == sorteada[3]:
+            if len(bolas_resultado8) == 4 and bolas_resultado8[0] == sorteada[0] and bolas_resultado8[1] == sorteada[1] and bolas_resultado8[2] == sorteada[2] and bolas_resultado8[3] == sorteada[3]:
                 # Parâmetro teste
-                mostrarTriunfo()
-                desabilitarBotao()
-                criarBotaoReiniciar()
+                mostrar_triunfo()
+                desabilitar_botao()
+                criar_botao_reiniciar()
                 # Verifica a lista
-                bolasResultado8.clear()
+                bolas_resultado8.clear()
                 esconder.place_forget()
 
             # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada           
-            if len(bolasResultado9) == 4 and bolasResultado9[0] == sorteada[0] and bolasResultado9[1] == sorteada[1] and bolasResultado9[2] == sorteada[2] and bolasResultado9[3] == sorteada[3]:
+            if len(bolas_resultado9) == 4 and bolas_resultado9[0] == sorteada[0] and bolas_resultado9[1] == sorteada[1] and bolas_resultado9[2] == sorteada[2] and bolas_resultado9[3] == sorteada[3]:
                 # Parâmetro teste
-                mostrarTriunfo()
-                desabilitarBotao()
-                criarBotaoReiniciar()
+                mostrar_triunfo()
+                desabilitar_botao()
+                criar_botao_reiniciar()
                 # Verifica a lista
-                bolasResultado9.clear()
+                bolas_resultado9.clear()
                 esconder.place_forget()
 
             # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada           
-            if len(bolasResultado10) == 4 and bolasResultado10[0] == sorteada[0] and bolasResultado10[1] == sorteada[1] and bolasResultado10[2] == sorteada[2] and bolasResultado10[3] == sorteada[3]:
+            if len(bolas_resultado10) == 4 and bolas_resultado10[0] == sorteada[0] and bolas_resultado10[1] == sorteada[1] and bolas_resultado10[2] == sorteada[2] and bolas_resultado10[3] == sorteada[3]:
                 # Parâmetro teste
-                mostrarTriunfo()
-                desabilitarBotao()
-                criarBotaoReiniciar()
+                mostrar_triunfo()
+                desabilitar_botao()
+                criar_botao_reiniciar()
                 # Verifica a lista
-                bolasResultado10.clear()
+                bolas_resultado10.clear()
                 esconder.place_forget()   
             
 
             # Se a condicional acima não for satisfeita, o código abaixo é chamado
             else:
                 # Agenda a execução da função novamente a cada 100 milissegundos
-                tela.after(1000, verificarLista)
+                tela.after(1000, verificar_lista)
 
 
 
         # Função para mudar a cor
-        def mudarCor(cor):  
+        def mudar_cor(cor):  
             # Estrutura de repetição que vai ler e ordenar tudo que esta na lista de bolasSemPreencher
-            for inteirosDivisiveis, bola in enumerate(bolasSemPreencher):
+            for inteiros_divisiveis, bola in enumerate(bolas_sem_preencher):
                 # Condicional que só muda de cor se o número divísivel por 10 for inteiro
-                if inteirosDivisiveis % 10 == 0:
+                if inteiros_divisiveis % 10 == 0:
                     # Obtém a cor atual de qualquer uma das bolas
-                    corAtual = bola.itemcget(1, "fill")
+                    cor_atual = bola.itemcget(1, "fill")
                     # Se a cor atual for igual a branco, ele executará a condicional a baixo
-                    if corAtual == "white":
+                    if cor_atual == "white":
                         # Muda a cor para a cor que o usuário selecionou
                         bola.itemconfig(1, fill=cor)
                         # Acrescenta as cores na lista
-                        bolasResultado.append(cor)
+                        bolas_resultado.append(cor)
                         # Verifica a lista de escolhas                       
-                        verificarLista()
+                        verificar_lista()
 
                         # Retorna para o começo para esperar a próxima ação
                         return     
 
-            for bolasEspecificas, bola in enumerate(bolasSemPreencher):
+            for bolas_especificas, bola in enumerate(bolas_sem_preencher):
                 # Condicional que só muda de cor se o número for igual aos propostos
-                if bolasEspecificas == 1  or bolasEspecificas == 11 or bolasEspecificas == 21 or bolasEspecificas == 31:
+                if bolas_especificas == 1  or bolas_especificas == 11 or bolas_especificas == 21 or bolas_especificas == 31:
                     # Obtém a cor atual de qualquer uma das bolas
-                    corAtual = bola.itemcget(1, "fill")
+                    cor_atual = bola.itemcget(1, "fill")
                     # Se a cor atual for igual a branco, ele executará a condicional a baixo
-                    if corAtual == "white":
+                    if cor_atual == "white":
                         # Muda a cor para a cor que o usuário selecionou
                         bola.itemconfig(1, fill=cor)
                         # Acrescenta as cores na lista
-                        bolasResultado2.append(cor)
+                        bolas_resultado2.append(cor)
                         # Verifica a lista de escolhas                       
-                        verificarLista()
+                        verificar_lista()
                         # Retorna para o começo para esperar a próxima ação             
                         return
                     
-            for bolasEspecificas, bola in enumerate(bolasSemPreencher):
+            for bolas_especificas, bola in enumerate(bolas_sem_preencher):
                 # Condicional que só muda de cor se o número for igual aos propostos
-                if bolasEspecificas == 2  or bolasEspecificas == 12 or bolasEspecificas == 22 or bolasEspecificas == 32:
+                if bolas_especificas == 2  or bolas_especificas == 12 or bolas_especificas == 22 or bolas_especificas == 32:
                     # Obtém a cor atual de qualquer uma das bolas
-                    corAtual = bola.itemcget(1, "fill")
+                    cor_atual = bola.itemcget(1, "fill")
                     # Se a cor atual for igual a branco, ele executará a condicional a baixo
-                    if corAtual == "white":
+                    if cor_atual == "white":
                         # Muda a cor para a cor que o usuário selecionou
                         bola.itemconfig(1, fill=cor)
                         # Acrescenta as cores na lista
-                        bolasResultado3.append(cor)
+                        bolas_resultado3.append(cor)
                         # Verifica a lista de escolhas                       
-                        verificarLista()
+                        verificar_lista()
                         # Retorna para o começo para esperar a próxima ação             
                         return
                     
-            for bolasEspecificas, bola in enumerate(bolasSemPreencher):
+            for bolas_especificas, bola in enumerate(bolas_sem_preencher):
                 # Condicional que só muda de cor se o número for igual aos propostos
-                if bolasEspecificas == 3  or bolasEspecificas == 13 or bolasEspecificas == 23 or bolasEspecificas == 33:
+                if bolas_especificas == 3  or bolas_especificas == 13 or bolas_especificas == 23 or bolas_especificas == 33:
                     # Obtém a cor atual de qualquer uma das bolas
-                    corAtual = bola.itemcget(1, "fill")
+                    cor_atual = bola.itemcget(1, "fill")
                     # Se a cor atual for igual a branco, ele executará a condicional a baixo
-                    if corAtual == "white":
+                    if cor_atual == "white":
                         # Muda a cor para a cor que o usuário selecionou
                         bola.itemconfig(1, fill=cor)
                         # Acrescenta as cores na lista
-                        bolasResultado4.append(cor)
+                        bolas_resultado4.append(cor)
                         # Verifica a lista de escolhas                       
-                        verificarLista()
+                        verificar_lista()
                         # Retorna para o começo para esperar a próxima ação             
                         return 
 
-            for bolasEspecificas, bola in enumerate(bolasSemPreencher):
+            for bolas_especificas, bola in enumerate(bolas_sem_preencher):
                 # Condicional que só muda de cor se o número for igual aos propostos
-                if bolasEspecificas == 4  or bolasEspecificas == 14 or bolasEspecificas == 24 or bolasEspecificas == 34:
+                if bolas_especificas == 4  or bolas_especificas == 14 or bolas_especificas == 24 or bolas_especificas == 34:
                     # Obtém a cor atual de qualquer uma das bolas
-                    corAtual = bola.itemcget(1, "fill")
+                    cor_atual = bola.itemcget(1, "fill")
                     # Se a cor atual for igual a branco, ele executará a condicional a baixo
-                    if corAtual == "white":
+                    if cor_atual == "white":
                         # Muda a cor para a cor que o usuário selecionou
                         bola.itemconfig(1, fill=cor)
                         # Acrescenta as cores na lista
-                        bolasResultado5.append(cor)
+                        bolas_resultado5.append(cor)
                         # Verifica a lista de escolhas                       
-                        verificarLista()
+                        verificar_lista()
                         # Retorna para o começo para esperar a próxima ação             
                         return
                     
-            for bolasEspecificas, bola in enumerate(bolasSemPreencher):
+            for bolas_especificas, bola in enumerate(bolas_sem_preencher):
                 # Condicional que só muda de cor se o número for igual aos propostos
-                if bolasEspecificas == 5  or bolasEspecificas == 15 or bolasEspecificas == 25 or bolasEspecificas == 35:
+                if bolas_especificas == 5  or bolas_especificas == 15 or bolas_especificas == 25 or bolas_especificas == 35:
                     # Obtém a cor atual de qualquer uma das bolas
-                    corAtual = bola.itemcget(1, "fill")
+                    cor_atual = bola.itemcget(1, "fill")
                     # Se a cor atual for igual a branco, ele executará a condicional a baixo
-                    if corAtual == "white":
+                    if cor_atual == "white":
                         # Muda a cor para a cor que o usuário selecionou
                         bola.itemconfig(1, fill=cor)
                         # Acrescenta as cores na lista
-                        bolasResultado6.append(cor)
+                        bolas_resultado6.append(cor)
                         # Verifica a lista de escolhas                       
-                        verificarLista()
+                        verificar_lista()
                         # Retorna para o começo para esperar a próxima ação             
                         return 
 
-            for bolasEspecificas, bola in enumerate(bolasSemPreencher):
+            for bolas_especificas, bola in enumerate(bolas_sem_preencher):
                 # Condicional que só muda de cor se o número for igual aos propostos
-                if bolasEspecificas == 6  or bolasEspecificas == 16 or bolasEspecificas == 26 or bolasEspecificas == 36:
+                if bolas_especificas == 6  or bolas_especificas == 16 or bolas_especificas == 26 or bolas_especificas == 36:
                     # Obtém a cor atual de qualquer uma das bolas
-                    corAtual = bola.itemcget(1, "fill")
+                    cor_atual = bola.itemcget(1, "fill")
                     # Se a cor atual for igual a branco, ele executará a condicional a baixo
-                    if corAtual == "white":
+                    if cor_atual == "white":
                         # Muda a cor para a cor que o usuário selecionou
                         bola.itemconfig(1, fill=cor)
                         # Acrescenta as cores na lista
-                        bolasResultado7.append(cor)
+                        bolas_resultado7.append(cor)
                         # Verifica a lista de escolhas                       
-                        verificarLista()
+                        verificar_lista()
                         # Retorna para o começo para esperar a próxima ação             
                         return 
                     
-            for bolasEspecificas, bola in enumerate(bolasSemPreencher):
+            for bolas_especificas, bola in enumerate(bolas_sem_preencher):
                 # Condicional que só muda de cor se o número for igual aos propostos
-                if bolasEspecificas == 7  or bolasEspecificas == 17 or bolasEspecificas == 27 or bolasEspecificas == 37:
+                if bolas_especificas == 7  or bolas_especificas == 17 or bolas_especificas == 27 or bolas_especificas == 37:
                     # Obtém a cor atual de qualquer uma das bolas
-                    corAtual = bola.itemcget(1, "fill")
+                    cor_atual = bola.itemcget(1, "fill")
                     # Se a cor atual for igual a branco, ele executará a condicional a baixo
-                    if corAtual == "white":
+                    if cor_atual == "white":
                         # Muda a cor para a cor que o usuário selecionou
                         bola.itemconfig(1, fill=cor)
                         # Acrescenta as cores na lista
-                        bolasResultado8.append(cor)
+                        bolas_resultado8.append(cor)
                         # Verifica a lista de escolhas                       
-                        verificarLista()
+                        verificar_lista()
                         # Retorna para o começo para esperar a próxima ação             
                         return 
 
 
-            for bolasEspecificas, bola in enumerate(bolasSemPreencher):
+            for bolas_especificas, bola in enumerate(bolas_sem_preencher):
                 # Condicional que só muda de cor se o número for igual aos propostos
-                if bolasEspecificas == 8  or bolasEspecificas == 18 or bolasEspecificas == 28 or bolasEspecificas == 38:
+                if bolas_especificas == 8  or bolas_especificas == 18 or bolas_especificas == 28 or bolas_especificas == 38:
                     # Obtém a cor atual de qualquer uma das bolas
-                    corAtual = bola.itemcget(1, "fill")
+                    cor_atual = bola.itemcget(1, "fill")
                     # Se a cor atual for igual a branco, ele executará a condicional a baixo
-                    if corAtual == "white":
+                    if cor_atual == "white":
                         # Muda a cor para a cor que o usuário selecionou
                         bola.itemconfig(1, fill=cor)
                         # Acrescenta as cores na lista
-                        bolasResultado9.append(cor)
+                        bolas_resultado9.append(cor)
                         # Verifica a lista de escolhas                       
-                        verificarLista()
+                        verificar_lista()
                         # Retorna para o começo para esperar a próxima ação             
                         return 
 
-            for bolasEspecificas, bola in enumerate(bolasSemPreencher):
+            for bolas_especificas, bola in enumerate(bolas_sem_preencher):
                 # Condicional que só muda de cor se o número for igual aos propostos
-                if bolasEspecificas == 9  or bolasEspecificas == 19 or bolasEspecificas == 29 or bolasEspecificas == 39:
+                if bolas_especificas == 9  or bolas_especificas == 19 or bolas_especificas == 29 or bolas_especificas == 39:
                     # Obtém a cor atual de qualquer uma das bolas
-                    corAtual = bola.itemcget(1, "fill")
+                    cor_atual = bola.itemcget(1, "fill")
                     # Se a cor atual for igual a branco, ele executará a condicional a baixo
-                    if corAtual == "white":
+                    if cor_atual == "white":
                         # Muda a cor para a cor que o usuário selecionou
                         bola.itemconfig(1, fill=cor)
                         # Acrescenta as cores na lista
-                        bolasResultado10.append(cor)
+                        bolas_resultado10.append(cor)
                         # Verifica a lista de escolhas                       
-                        verificarLista()
+                        verificar_lista()
                         # Retorna para o começo para esperar a próxima ação             
                         return
    
 
         # Criar botões com certas características específicas
-        botaoRoxo = tk.Button(tela, command=lambda: (mudarCor("purple")), bg="purple", fg= "white")
+        botao_roxo = tk.Button(tela, command=lambda: (mudar_cor("purple")), bg="purple", fg= "white")
 
         # Determina o lugar através de coordenadas
-        botaoRoxo.place(x=462, y=600)
+        botao_roxo.place(x=462, y=600)
 
         # Criar botões com certas características específicas
-        botaoAzul = tk.Button(tela, command=lambda: (mudarCor("blue")), bg="blue", fg= "white")
+        botao_azul = tk.Button(tela, command=lambda: (mudar_cor("blue")), bg="blue", fg= "white")
         # Determina o lugar através de coordenada
-        botaoAzul.place(x=544, y=600)
+        botao_azul.place(x=544, y=600)
 
         # Criar botões com certas características específicas
-        botaoVerde = tk.Button(tela, command=lambda: (mudarCor("green")), bg="green", fg= "white")
+        botao_verde = tk.Button(tela, command=lambda: (mudar_cor("green")), bg="green", fg= "white")
         # Determina o lugar através de coordenada
-        botaoVerde.place(x=626, y=600)
+        botao_verde.place(x=626, y=600)
 
         # Criar botões com certas características específicas
-        botaoAmarelo = tk.Button(tela, command=lambda: (mudarCor("orange")), bg="orange", fg= "white")
+        botao_amarelo = tk.Button(tela, command=lambda: (mudar_cor("orange")), bg="orange", fg= "white")
         # Determina o lugar através de coordenada
-        botaoAmarelo.place(x=708, y=600)
+        botao_amarelo.place(x=708, y=600)
 
         # Criar botões com certas características específicas
-        botaoVermelho = tk.Button(tela, command=lambda: (mudarCor("red")), bg="red", fg= "white")
+        botao_vermelho = tk.Button(tela, command=lambda: (mudar_cor("red")), bg="red", fg= "white")
         # Determina o lugar através de coordenada
-        botaoVermelho.place(x=790, y=600)
+        botao_vermelho.place(x=790, y=600)
 
         # Criar botões com certas características específicas
-        botaoMarrom = tk.Button(tela, command=lambda: (mudarCor("brown")), bg="brown", fg="white")
+        botao_marrom = tk.Button(tela, command=lambda: (mudar_cor("brown")), bg="brown", fg="white")
         # Determina o lugar através de coordenada
-        botaoMarrom.place(x=872, y=600)
+        botao_marrom.place(x=872, y=600)
 
         # Legenda para o título do jogo
         titulo = tk.Label(tela, text="JOGO DA SENHA", bg = "white", fg = "black", font = ("Times_New_Roman", 18))
@@ -1002,49 +1000,49 @@ def moverDireita():
         a = 0
         
         # Mostra todas as cooordenadas de y
-        posicoesY = [97, 112, 140, 155, 187, 202, 235, 250, 281, 296, 329, 344, 376, 391, 424, 439, 471, 486, 515, 530]
+        posicoes_y = [97, 112, 140, 155, 187, 202, 235, 250, 281, 296, 329, 344, 376, 391, 424, 439, 471, 486, 515, 530]
 
         # Lista vazia para armazenar as bolas que irão indicar se o usuário está no caminho certo
-        listaBolas = []
+        lista_bolas = []
 
         # Estrutura de repetição para criação de bolas
-        for acertos in range(0,2):
+        for _ in range(0,2):
             # Soma 40 ao contador
             a += 24
             # Estrutura de repetição que posiciona cada bola no seu devido lugar
-            for y in posicoesY:
+            for y in posicoes_y:
                 # Cria o fundo das bolas
-                canvaAcertos = tk.Canvas(tela, width=16.8, height=16.8, highlightthickness=0)
+                canvas_acertos = tk.Canvas(tela, width=16.8, height=16.8, highlightthickness=0)
                 # Cria as bolas
-                canvaAcertos.create_oval(0, 0, 15, 15, fill="grey", outline="grey")
+                canvas_acertos.create_oval(0, 0, 15, 15, fill="grey", outline="grey")
                 # Configura a cor para cinza
-                canvaAcertos.configure(bg="grey")
+                canvas_acertos.configure(bg="grey")
                 # Define as posições variáveis
-                canvaAcertos.place(x=525 + a, y=y)
+                canvas_acertos.place(x=525 + a, y=y)
                 # Acrescentas as bolas em uma lista vazia para facilitar a chamada 
-                listaBolas.append(canvaAcertos)
+                lista_bolas.append(canvas_acertos)
 
 
 # Cria o canvas dentro da janela principal e o deixa com as bordas transparentes
-canvasJogo = tk.Canvas(tela, width=1000, height=1000, highlightthickness=0)
+canvas_jogo = tk.Canvas(tela, width=1000, height=1000, highlightthickness=0)
 
 # Desenha um quadrado ou rentângulo
-retangulo = canvasJogo.create_rectangle(30, 30, 330, 510, fill="black", outline="blue", width=15)
+retangulo = canvas_jogo.create_rectangle(30, 30, 330, 510, fill="black", outline="blue", width=15)
 
 # Configura o fundo do elemento canva para branco
-canvasJogo.configure(bg="white")
+canvas_jogo.configure(bg="white")
 
 # Determina o lugar através de coordenadas
-canvasJogo.place(x=0, y=50)
+canvas_jogo.place(x=0, y=50)
 
 
 # Chamar a função move_right() após um atraso de 10 mílisegundo
-canvasJogo.after(10, moverDireita)
+canvas_jogo.after(10, mover_direita)
 
 
 
 # Vincula o botão "ESC" a função fechar tela
-tela.bind("<Escape>", fecharTela)
+tela.bind("<Escape>", fecha_tela)
 
 # Mantêm a tela aberta e operando para sempre verificar quaisquer movomentações dentro dela
 tela.mainloop()
