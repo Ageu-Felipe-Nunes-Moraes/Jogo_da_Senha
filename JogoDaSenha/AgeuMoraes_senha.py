@@ -153,79 +153,61 @@ def move_right():
             c += 54
 
 
-            # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
+            # Repecitivamente, criam o canvas, mostram eles na tela, criam as bolas, configuram os canvas para preto, posicionam as bolas na tela, e mandam para as listas das bolas não preenchidas  
             canva_ball1 = tk.Canvas(screen, width=25.2, height=24.3, highlightthickness=0)        
             canva_ball1.create_oval(0, 0, 24, 24, fill="white", outline="black")
             canva_ball1.configure(bg= "black")
             canva_ball1.place(x = 560 + c, y = 520 )
             unfilled_balls.append(canva_ball1)
 
-
-            # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
             canva_ball2 = tk.Canvas(screen, width=25.2, height=24.3, highlightthickness=0)
             canva_ball2.create_oval(0, 0, 24, 24, fill="white", outline="black")
             canva_ball2.configure(bg= "black")
             canva_ball2.place(x = 560 + c, y = 474 )
             unfilled_balls.append(canva_ball2)
-
-
-            # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
+ 
             canva_ball3 = tk.Canvas(screen, width=25.2, height=24.3, highlightthickness=0)
             canva_ball3.create_oval(0, 0, 24, 24, fill="white", outline="black")
             canva_ball3.configure(bg= "black")
             canva_ball3.place(x = 560 + c, y = 428 )
             unfilled_balls.append(canva_ball3)
-
-
-            # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
+  
             canva_ball4 = tk.Canvas(screen, width=25.2, height=24.3, highlightthickness=0)
             canva_ball4.create_oval(0, 0, 24, 24, fill="white", outline="black")
             canva_ball4.configure(bg= "black")
             canva_ball4.place(x = 560 + c, y = 380 )
             unfilled_balls.append(canva_ball4)
-
-
-            # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
+ 
             canva_ball5 = tk.Canvas(screen, width=25.2, height=24.3, highlightthickness=0)
             canva_ball5.create_oval(0, 0, 24, 24, fill="white", outline="black")
             canva_ball5.configure(bg= "black")
             canva_ball5.place(x = 560 + c, y = 334 )
             unfilled_balls.append(canva_ball5)
-
-
-            # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
+ 
             canva_ball6 = tk.Canvas(screen, width=25.2, height=24.3, highlightthickness=0)
             canva_ball6.create_oval(0, 0, 24, 24, fill="white", outline="black")
             canva_ball6.configure(bg= "black")
             canva_ball6.place(x = 560 + c, y = 283.5 )
             unfilled_balls.append(canva_ball6)
 
-
-            # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
             canva_ball7 = tk.Canvas(screen, width=25.2, height=24.3, highlightthickness=0)
             canva_ball7.create_oval(0, 0, 24, 24, fill="white", outline="black")
             canva_ball7.configure(bg= "black")
             canva_ball7.place(x = 560 + c, y = 236.5 )
             unfilled_balls.append(canva_ball7)
-
-
-            # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
+ 
             canva_ball8 = tk.Canvas(screen, width=25.2, height=24.3, highlightthickness=0)
             canva_ball8.create_oval(0, 0, 24, 24, fill="white", outline="black")
             canva_ball8.configure(bg= "black")
             canva_ball8.place(x = 560 + c, y = 190 )
             unfilled_balls.append(canva_ball8)
-
-
-            # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
+  
             canva_ball9 = tk.Canvas(screen, width=25.2, height=24.3, highlightthickness=0)
             canva_ball9.create_oval(0, 0, 24, 24, fill="white", outline="black")
             canva_ball9.configure(bg= "black")
             canva_ball9.place(x = 560 + c, y = 142 )
             unfilled_balls.append(canva_ball9)
-
-
-            # Repecitivamente, cria o canvas, mostra ele na tela, cria a bola, configura o canva para preto, posiciona a bola na tela, e manda para a lista das bolas não preenchidas  
+ 
             canva_ball10 = tk.Canvas(screen, width=25.2, height=24.3, highlightthickness=0)
             canva_ball10.create_oval(0, 0, 24, 24, fill="white", outline="black")
             canva_ball10.configure(bg= "black")
@@ -292,41 +274,24 @@ def move_right():
             t += 90
 
 
-        # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
+        # Listas vazias que irão receber a escolha dos botões feitas pelo usuário
         ball_result = []
-
-        # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
         ball_result2 = []
-
-        # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
         ball_result3 = []
-
-        # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
         ball_result4 = []
-
-        # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
         ball_result5 = []
-
-        # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
         ball_result6 = []
-
-        # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
         ball_result7 = []
-
-        # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
         ball_result8 = []
-
-        # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
         ball_result9 = []
-
-        # Lista vazia que irá receber a escolha dos botões feitas pelo usuário
         ball_result10 = []
 
 
         # Função verificadora de lista
         def list_checks():
             
-            # Condicional que avalia se há quatro cores na lista
+            # Condicionais que avaliam se há quatro cores na lista
+
             if len(ball_result) == 4:
 
                 # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
@@ -342,7 +307,7 @@ def move_right():
                 if ball_result[3] in set(drawn) and ball_result[3] != drawn[3]:
                     balls_list[18].itemconfig(1, fill="white")
 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada                
+                
                 if ball_result[0] in set(drawn) and ball_result[0] == drawn[0]:
                     balls_list[19].itemconfig(1, fill="black")
 
@@ -356,10 +321,8 @@ def move_right():
                     balls_list[18].itemconfig(1, fill="black")
 
 
-            # Condicional que avalia se há quatro cores na lista
             if len(ball_result2) == 4:
-
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada                
+              
                 if ball_result2[0] in set(drawn) and ball_result2[0] != drawn[0]:
                     balls_list[17].itemconfig(1, fill="white")
 
@@ -372,7 +335,7 @@ def move_right():
                 if ball_result2[3] in set(drawn) and ball_result2[3] != drawn[3]:
                     balls_list[16].itemconfig(1, fill="white")
 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada                
+              
                 if ball_result2[0] in set(drawn) and ball_result2[0] == drawn[0]:
                     balls_list[17].itemconfig(1, fill="black")
 
@@ -386,10 +349,8 @@ def move_right():
                     balls_list[16].itemconfig(1, fill="black")
 
 
-            # Condicional que avalia se há quatro cores na lista
             if len(ball_result3) == 4:
-
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada                
+               
                 if ball_result3[0] in set(drawn) and ball_result3[0] != drawn[0]:
                     balls_list[15].itemconfig(1, fill="white")
 
@@ -402,7 +363,7 @@ def move_right():
                 if ball_result3[3] in set(drawn) and ball_result3[3] != drawn[3]:
                     balls_list[14].itemconfig(1, fill="white")
 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada               
+            
                 if ball_result3[0] in set(drawn) and ball_result3[0] == drawn[0]:
                     balls_list[15].itemconfig(1, fill="black")
 
@@ -416,10 +377,8 @@ def move_right():
                     balls_list[14].itemconfig(1, fill="black")
 
 
-            # Condicional que avalia se há quatro cores na lista
             if len(ball_result4) == 4:
 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
                 if ball_result4[0] in set(drawn) and ball_result4[0] != drawn[0]:
                     balls_list[13].itemconfig(1, fill="white")
 
@@ -432,7 +391,7 @@ def move_right():
                 if ball_result4[3] in set(drawn) and ball_result4[3] != drawn[3]:
                     balls_list[12].itemconfig(1, fill="white")
 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada                
+             
                 if ball_result4[0] in set(drawn) and ball_result4[0] == drawn[0]:
                     balls_list[13].itemconfig(1, fill="black")
 
@@ -446,10 +405,8 @@ def move_right():
                     balls_list[12].itemconfig(1, fill="black")
 
 
-            # Condicional que avalia se há quatro cores na lista
             if len(ball_result5) == 4:
 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
                 if ball_result5[0] in set(drawn) and ball_result5[0] != drawn[0]:
                     balls_list[11].itemconfig(1, fill="white")
 
@@ -462,7 +419,7 @@ def move_right():
                 if ball_result5[3] in set(drawn) and ball_result5[3] != drawn[3]:
                     balls_list[10].itemconfig(1, fill="white")
 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada   
+
                 if ball_result5[0] in set(drawn) and ball_result5[0] == drawn[0]:
                     balls_list[11].itemconfig(1, fill="black")
 
@@ -476,10 +433,8 @@ def move_right():
                     balls_list[10].itemconfig(1, fill="black")
 
 
-            # Condicional que avalia se há quatro cores na lista
             if len(ball_result6) == 4:
 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
                 if ball_result6[0] in set(drawn) and ball_result6[0] != drawn[0]:
                     balls_list[9].itemconfig(1, fill="white")
 
@@ -492,7 +447,7 @@ def move_right():
                 if ball_result6[3] in set(drawn) and ball_result6[3] != drawn[3]:
                     balls_list[8].itemconfig(1, fill="white")
 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
+
                 if ball_result6[0] in set(drawn) and ball_result6[0] == drawn[0]:
                     balls_list[9].itemconfig(1, fill="black")
 
@@ -506,10 +461,8 @@ def move_right():
                     balls_list[8].itemconfig(1, fill="black")
 
 
-            # Condicional que avalia se há quatro cores na lista
             if len(ball_result7) == 4:
 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
                 if ball_result7[0] in set(drawn) and ball_result7[0] != drawn[0]:
                     balls_list[7].itemconfig(1, fill="white")
 
@@ -522,7 +475,7 @@ def move_right():
                 if ball_result7[3] in set(drawn) and ball_result7[3] != drawn[3]:
                     balls_list[6].itemconfig(1, fill="white")
 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
+
                 if ball_result7[0] in set(drawn) and ball_result7[0] == drawn[0]:
                     balls_list[7].itemconfig(1, fill="black")
 
@@ -536,10 +489,8 @@ def move_right():
                     balls_list[6].itemconfig(1, fill="black")
 
 
-            # Condicional que avalia se há quatro cores na lista
             if len(ball_result8) == 4:
-                
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
+
                 if ball_result8[0] in set(drawn) and ball_result8[0] != drawn[0]:
                     balls_list[5].itemconfig(1, fill="white")
                 
@@ -552,7 +503,7 @@ def move_right():
                 if ball_result8[3] in set(drawn) and ball_result8[3] != drawn[3]:
                     balls_list[4].itemconfig(1, fill="white")
                 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
+
                 if ball_result8[0] in set(drawn) and ball_result8[0] == drawn[0]:
                     balls_list[5].itemconfig(1, fill="black")
                 
@@ -566,10 +517,8 @@ def move_right():
                     balls_list[4].itemconfig(1, fill="black")
 
 
-            # Condicional que avalia se há quatro cores na lista
             if len(ball_result9) == 4:
-                
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
+
                 if ball_result9[0] in set(drawn) and ball_result9[0] != drawn[0]:
                     balls_list[3].itemconfig(1, fill="white")
 
@@ -582,7 +531,7 @@ def move_right():
                 if ball_result9[3] in set(drawn) and ball_result9[3] != drawn[3]:
                     balls_list[2].itemconfig(1, fill="white")
 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
+
                 if ball_result9[0] in set(drawn) and ball_result9[0] == drawn[0]:
                     balls_list[3].itemconfig(1, fill="black")
 
@@ -595,11 +544,9 @@ def move_right():
                 if ball_result9[3] in set(drawn) and ball_result9[3] == drawn[3]:
                     balls_list[2].itemconfig(1, fill="black")
 
-
-            # Condicional que avalia se há quatro cores na lista   
+  
             if len(ball_result10) == 4:
-                
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
+
                 if ball_result10[0] in set(drawn) and ball_result10[0] != drawn[0]:
                     balls_list[1].itemconfig(1, fill="white")
                 
@@ -612,7 +559,7 @@ def move_right():
                 if ball_result10[3] in set(drawn) and ball_result10[3] != drawn[3]:
                     balls_list[0].itemconfig(1, fill="white")
                 
-                # Condicionais que avaliam se os itens da lista estão condigentes com os itens da lista de cores sorteada
+
                 if ball_result10[0] in set(drawn) and ball_result10[0] == drawn[0]:
                     balls_list[1].itemconfig(1, fill="black")
                 
@@ -631,44 +578,28 @@ def move_right():
                     # Limpa lista
                     ball_result.clear()
                     
-                # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
                 if ball_result2[0] != drawn[0] or ball_result2[1] != drawn[1] or ball_result2[2] != drawn[2] or ball_result2[3] != drawn[3]:
-                    # Limpa lista
                     ball_result2.clear()
-                    
-                # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
+ 
                 if ball_result3[0] != drawn[0] or ball_result3[1] != drawn[1] or ball_result3[2] != drawn[2] or ball_result3[3] != drawn[3]:   
-                    # Limpa lista
                     ball_result3.clear()
-                    
-                # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
+
                 if ball_result4[0] != drawn[0] or ball_result4[1] != drawn[1] or ball_result4[2] != drawn[2] or ball_result4[3] != drawn[3]:      
-                    # Limpa lista
                     ball_result4.clear()
-                    
-                # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
+
                 if ball_result5[0] != drawn[0] or ball_result5[1] != drawn[1] or ball_result5[2] != drawn[2] or ball_result5[3] != drawn[3]:   
-                    # Limpa lista
                     ball_result5.clear()
-                    
-                # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
+ 
                 if ball_result6[0] != drawn[0] or ball_result6[1] != drawn[1] or ball_result6[2] != drawn[2] or ball_result6[3] != drawn[3]:      
-                    # Limpa lista
                     ball_result6.clear()
-                    
-                # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
+
                 if ball_result7[0] != drawn[0] or ball_result7[1] != drawn[1] or ball_result7[2] != drawn[2] or ball_result7[3] != drawn[3]:      
-                    # Limpa lista
                     ball_result7.clear()
-                    
-                 # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
+
                 if ball_result8[0] != drawn[0] or ball_result8[1] != drawn[1] or ball_result8[2] != drawn[2] or ball_result8[3] != drawn[3]:     
-                    # Limpa lista
                     ball_result8.clear()
-                    
-                # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições
+
                 if ball_result9[0] != drawn[0] or ball_result9[1] != drawn[1] or ball_result9[2] != drawn[2] or ball_result9[3] != drawn[3]:    
-                    # Limpa lista
                     ball_result.clear()
                     
                 # Condicional que avalia se o botão clicado pelo usuário é diferente das cores sorteadas nas suas respecitivas posições, limpa lista, cria botão de reiniciar, desabilita botões, declara derrota e mostra o resultado certo na tela
@@ -691,93 +622,66 @@ def move_right():
                 ball_result.clear()
                 hide.place_forget()
             
-            # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada
             if len(ball_result2) == 4 and ball_result2[0] == drawn[0] and ball_result2[1] == drawn[1] and ball_result2[2] == drawn[2] and ball_result2[3] == drawn[3]:
-                # Parâmetro de teste
                 show_victoria()
                 disable_button()
                 creates_restart_button()
-                # Verifica a lista
                 ball_result2.clear()
                 hide.place_forget()
 
-            # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada
             if len(ball_result3) == 4 and ball_result3[0] == drawn[0] and ball_result3[1] == drawn[1] and ball_result3[2] == drawn[2] and ball_result3[3] == drawn[3]:
-                # Parâmetro de teste
                 show_victoria()
                 disable_button()
                 creates_restart_button()
-                # Verifica a lista
                 ball_result3.clear()
                 hide.place_forget()
 
-            # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada
             if len(ball_result4) == 4 and ball_result4[0] == drawn[0] and ball_result4[1] == drawn[1] and ball_result4[2] == drawn[2] and ball_result4[3] == drawn[3]:
-                # Parâmetro de teste
                 show_victoria()
                 disable_button()
                 creates_restart_button()
-                # Verifica a lista
                 ball_result4.clear()
                 hide.place_forget()
 
-            # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada
             if len(ball_result5) == 4 and ball_result5[0] == drawn[0] and ball_result5[1] == drawn[1] and ball_result5[2] == drawn[2] and ball_result5[3] == drawn[3]:
-                # Parâmetro de teste
                 show_victoria()
                 disable_button()
                 creates_restart_button()
-                # Verifica a lista
                 ball_result5.clear()
                 hide.place_forget()
 
-            # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada
             if len(ball_result6) == 4 and ball_result6[0] == drawn[0] and ball_result6[1] == drawn[1] and ball_result6[2] == drawn[2] and ball_result6[3] == drawn[3]:
-                # Parâmetro de teste
                 show_victoria()
                 disable_button()
                 creates_restart_button()
-                # Verifica a lista
                 ball_result6.clear()
                 hide.place_forget()
-
-            # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada           
+         
             if len(ball_result7) == 4 and ball_result7[0] == drawn[0] and ball_result7[1] == drawn[1] and ball_result7[2] == drawn[2] and ball_result7[3] == drawn[3]:
-                # Parâmetro teste
                 show_victoria()
                 disable_button()
                 creates_restart_button()
-                # Verifica a lista
                 ball_result7.clear()
                 hide.place_forget()
-
-            # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada           
+       
             if len(ball_result8) == 4 and ball_result8[0] == drawn[0] and ball_result8[1] == drawn[1] and ball_result8[2] == drawn[2] and ball_result8[3] == drawn[3]:
-                # Parâmetro teste
                 show_victoria()
                 disable_button()
                 creates_restart_button()
-                # Verifica a lista
                 ball_result8.clear()
                 hide.place_forget()
-
-            # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada           
+          
             if len(ball_result9) == 4 and ball_result9[0] == drawn[0] and ball_result9[1] == drawn[1] and ball_result9[2] == drawn[2] and ball_result9[3] == drawn[3]:
-                # Parâmetro teste
                 show_victoria()
                 disable_button()
                 creates_restart_button()
-                # Verifica a lista
                 ball_result9.clear()
                 hide.place_forget()
-
-            # Se a lista dos botões clicados pelo usuário for igual a lista de cores aleatórias, a condicional será executada           
+         
             if len(ball_result10) == 4 and ball_result10[0] == drawn[0] and ball_result10[1] == drawn[1] and ball_result10[2] == drawn[2] and ball_result10[3] == drawn[3]:
-                # Parâmetro teste
                 show_victoria()
                 disable_button()
                 creates_restart_button()
-                # Verifica a lista
                 ball_result10.clear()
                 hide.place_forget()   
             
@@ -812,178 +716,104 @@ def move_right():
             for specifics_balls, ball in enumerate(unfilled_balls):
                 # Condicional que só muda de cor se o número for igual aos propostos
                 if specifics_balls == 1  or specifics_balls == 11 or specifics_balls == 21 or specifics_balls == 31:
-                    # Obtém a cor atual de qualquer uma das bolas
                     current_color = ball.itemcget(1, "fill")
-                    # Se a cor atual for igual a branco, ele executará a condicional a baixo
                     if current_color == "white":
-                        # Muda a cor para a cor que o usuário selecionou
                         ball.itemconfig(1, fill=cor)
-                        # Acrescenta as cores na lista
-                        ball_result2.append(cor)
-                        # Verifica a lista de escolhas                       
-                        list_checks()
-                        # Retorna para o começo para esperar a próxima ação             
+                        ball_result2.append(cor)                   
+                        list_checks()          
                         return
                     
             for specifics_balls, ball in enumerate(unfilled_balls):
-                # Condicional que só muda de cor se o número for igual aos propostos
                 if specifics_balls == 2  or specifics_balls == 12 or specifics_balls == 22 or specifics_balls == 32:
-                    # Obtém a cor atual de qualquer uma das bolas
                     current_color = ball.itemcget(1, "fill")
-                    # Se a cor atual for igual a branco, ele executará a condicional a baixo
                     if current_color == "white":
-                        # Muda a cor para a cor que o usuário selecionou
                         ball.itemconfig(1, fill=cor)
-                        # Acrescenta as cores na lista
-                        ball_result3.append(cor)
-                        # Verifica a lista de escolhas                       
-                        list_checks()
-                        # Retorna para o começo para esperar a próxima ação             
+                        ball_result3.append(cor)                      
+                        list_checks()            
                         return
                     
             for specifics_balls, ball in enumerate(unfilled_balls):
-                # Condicional que só muda de cor se o número for igual aos propostos
                 if specifics_balls == 3  or specifics_balls == 13 or specifics_balls == 23 or specifics_balls == 33:
-                    # Obtém a cor atual de qualquer uma das bolas
                     current_color = ball.itemcget(1, "fill")
-                    # Se a cor atual for igual a branco, ele executará a condicional a baixo
                     if current_color == "white":
-                        # Muda a cor para a cor que o usuário selecionou
                         ball.itemconfig(1, fill=cor)
-                        # Acrescenta as cores na lista
-                        ball_result4.append(cor)
-                        # Verifica a lista de escolhas                       
-                        list_checks()
-                        # Retorna para o começo para esperar a próxima ação             
+                        ball_result4.append(cor)                       
+                        list_checks()            
                         return 
 
             for specifics_balls, ball in enumerate(unfilled_balls):
-                # Condicional que só muda de cor se o número for igual aos propostos
                 if specifics_balls == 4  or specifics_balls == 14 or specifics_balls == 24 or specifics_balls == 34:
-                    # Obtém a cor atual de qualquer uma das bolas
                     current_color = ball.itemcget(1, "fill")
-                    # Se a cor atual for igual a branco, ele executará a condicional a baixo
                     if current_color == "white":
-                        # Muda a cor para a cor que o usuário selecionou
                         ball.itemconfig(1, fill=cor)
-                        # Acrescenta as cores na lista
-                        ball_result5.append(cor)
-                        # Verifica a lista de escolhas                       
-                        list_checks()
-                        # Retorna para o começo para esperar a próxima ação             
+                        ball_result5.append(cor)                      
+                        list_checks()             
                         return
                     
             for specifics_balls, ball in enumerate(unfilled_balls):
-                # Condicional que só muda de cor se o número for igual aos propostos
                 if specifics_balls == 5  or specifics_balls == 15 or specifics_balls == 25 or specifics_balls == 35:
-                    # Obtém a cor atual de qualquer uma das bolas
                     current_color = ball.itemcget(1, "fill")
-                    # Se a cor atual for igual a branco, ele executará a condicional a baixo
                     if current_color == "white":
-                        # Muda a cor para a cor que o usuário selecionou
                         ball.itemconfig(1, fill=cor)
-                        # Acrescenta as cores na lista
-                        ball_result6.append(cor)
-                        # Verifica a lista de escolhas                       
-                        list_checks()
-                        # Retorna para o começo para esperar a próxima ação             
+                        ball_result6.append(cor)                      
+                        list_checks()            
                         return 
 
             for specifics_balls, ball in enumerate(unfilled_balls):
-                # Condicional que só muda de cor se o número for igual aos propostos
                 if specifics_balls == 6  or specifics_balls == 16 or specifics_balls == 26 or specifics_balls == 36:
-                    # Obtém a cor atual de qualquer uma das bolas
                     current_color = ball.itemcget(1, "fill")
-                    # Se a cor atual for igual a branco, ele executará a condicional a baixo
                     if current_color == "white":
-                        # Muda a cor para a cor que o usuário selecionou
                         ball.itemconfig(1, fill=cor)
-                        # Acrescenta as cores na lista
-                        ball_result7.append(cor)
-                        # Verifica a lista de escolhas                       
-                        list_checks()
-                        # Retorna para o começo para esperar a próxima ação             
+                        ball_result7.append(cor)            
+                        list_checks()         
                         return 
                     
             for specifics_balls, ball in enumerate(unfilled_balls):
-                # Condicional que só muda de cor se o número for igual aos propostos
                 if specifics_balls == 7  or specifics_balls == 17 or specifics_balls == 27 or specifics_balls == 37:
-                    # Obtém a cor atual de qualquer uma das bolas
                     current_color = ball.itemcget(1, "fill")
-                    # Se a cor atual for igual a branco, ele executará a condicional a baixo
                     if current_color == "white":
-                        # Muda a cor para a cor que o usuário selecionou
                         ball.itemconfig(1, fill=cor)
-                        # Acrescenta as cores na lista
-                        ball_result8.append(cor)
-                        # Verifica a lista de escolhas                       
-                        list_checks()
-                        # Retorna para o começo para esperar a próxima ação             
+                        ball_result8.append(cor)                    
+                        list_checks()            
                         return 
 
 
             for specifics_balls, ball in enumerate(unfilled_balls):
-                # Condicional que só muda de cor se o número for igual aos propostos
                 if specifics_balls == 8  or specifics_balls == 18 or specifics_balls == 28 or specifics_balls == 38:
-                    # Obtém a cor atual de qualquer uma das bolas
                     current_color = ball.itemcget(1, "fill")
-                    # Se a cor atual for igual a branco, ele executará a condicional a baixo
                     if current_color == "white":
-                        # Muda a cor para a cor que o usuário selecionou
                         ball.itemconfig(1, fill=cor)
-                        # Acrescenta as cores na lista
-                        ball_result9.append(cor)
-                        # Verifica a lista de escolhas                       
-                        list_checks()
-                        # Retorna para o começo para esperar a próxima ação             
+                        ball_result9.append(cor)                  
+                        list_checks()             
                         return 
 
             for specifics_balls, ball in enumerate(unfilled_balls):
-                # Condicional que só muda de cor se o número for igual aos propostos
                 if specifics_balls == 9  or specifics_balls == 19 or specifics_balls == 29 or specifics_balls == 39:
-                    # Obtém a cor atual de qualquer uma das bolas
                     current_color = ball.itemcget(1, "fill")
-                    # Se a cor atual for igual a branco, ele executará a condicional a baixo
                     if current_color == "white":
-                        # Muda a cor para a cor que o usuário selecionou
                         ball.itemconfig(1, fill=cor)
-                        # Acrescenta as cores na lista
-                        ball_result10.append(cor)
-                        # Verifica a lista de escolhas                       
-                        list_checks()
-                        # Retorna para o começo para esperar a próxima ação             
+                        ball_result10.append(cor)      
+                        list_checks()            
                         return
    
 
         # Criar botões com certas características específicas
         purple_button = tk.Button(screen, command=lambda: (color_change("purple")), bg="purple", fg= "white")
-
-        # Determina o lugar através de coordenadas
         purple_button.place(x=462, y=600)
 
-        # Criar botões com certas características específicas
         blue_button = tk.Button(screen, command=lambda: (color_change("blue")), bg="blue", fg= "white")
-        # Determina o lugar através de coordenada
         blue_button.place(x=544, y=600)
 
-        # Criar botões com certas características específicas
         green_button = tk.Button(screen, command=lambda: (color_change("green")), bg="green", fg= "white")
-        # Determina o lugar através de coordenada
         green_button.place(x=626, y=600)
 
-        # Criar botões com certas características específicas
         yellow_button = tk.Button(screen, command=lambda: (color_change("orange")), bg="orange", fg= "white")
-        # Determina o lugar através de coordenada
         yellow_button.place(x=708, y=600)
 
-        # Criar botões com certas características específicas
         red_button = tk.Button(screen, command=lambda: (color_change("red")), bg="red", fg= "white")
-        # Determina o lugar através de coordenada
         red_button.place(x=790, y=600)
 
-        # Criar botões com certas características específicas
         brown_button = tk.Button(screen, command=lambda: (color_change("brown")), bg="brown", fg="white")
-        # Determina o lugar através de coordenada
         brown_button.place(x=872, y=600)
 
         # Legenda para o título do jogo
@@ -1039,11 +869,8 @@ canvas_game.place(x=0, y=50)
 # Chamar a função move_right() após um atraso de 10 mílisegundo
 canvas_game.after(10, move_right)
 
-
-
 # Vincula o botão "ESC" a função fechar tela
 screen.bind("<Escape>", close_screen)
 
 # Mantêm a tela aberta e operando para sempre verificar quaisquer movomentações dentro dela
 screen.mainloop()
-
