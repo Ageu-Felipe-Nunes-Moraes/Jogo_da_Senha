@@ -1,49 +1,49 @@
 # Mastermind
 
-Neste jogo, recriei o clássico jogo da senha, originalmente conhecido como Mastermind, inventado em 1970 pelo israelita Mordecai Meirowitz, especialista em telecomunicações. O objetivo é decifrar uma combinação de cores ocultas escolhidas aleatoriamente pelo computador. Você tem 10 tentativas para encontrar a combinação correta.
+In this game, I recreated the classic code-breaking game originally known as Mastermind, invented in 1970 by the Israeli telecommunications expert Mordecai Meirowitz. The goal is to decipher a hidden combination of colors randomly chosen by the computer. You have 10 attempts to find the correct combination.
 
-## Funcionalidades
+## Features
 
-- **Sorteio de Cores:** O computador escolhe aleatoriamente uma combinação de 4 cores e as mantém ocultas.
-- **Feedback de Tentativas:** Após cada tentativa, você recebe feedback sobre a precisão da sua tentativa.
-- **Bolas Brancas e Pretas:** As bolas brancas indicam que você acertou a cor, mas não a posição. As bolas pretas indicam que você acertou tanto a cor quanto a posição.
-- **Limite de Tentativas:** Você tem 10 tentativas para decifrar a combinação de cores.
-- **Reiniciar o Jogo:** Após o término do jogo, você pode reiniciá-lo para jogar novamente.
+- **Color Drawing:** The computer randomly selects a combination of 4 colors and keeps them hidden.
+- **Attempt Feedback:** After each attempt, you receive feedback on the accuracy of your guess.
+- **White and Black Pegs:** White pegs indicate that you guessed the correct color but not the position. Black pegs indicate that you guessed both the color and the position correctly.
+- **Attempt Limit:** You have 10 attempts to decipher the color combination.
+- **Restart Game:** After the game ends, you can restart it to play again.
 
-## Requisitos de Instalação
+## Installation Requirements
 
 - Python 3.x
 - Tkinter
 
-## Bibliotecas Necessárias
+## Required Libraries
 
-- `tkinter`: Biblioteca gráfica para a interface do jogo.
-- `random`: Para geração de números aleatórios.
-- `os` e `sys`: Para reiniciar o programa quando necessário.
+- `tkinter`: Graphical library for the game's interface.
+- `random`: For generating random numbers.
+- `os` and `sys`: For restarting the program when necessary.
 
-## Como Jogar
+## How to Play
 
-1. Certifique-se de ter Python instalado em seu sistema.
-2. Clone ou baixe o repositório deste jogo.
-3. Execute o arquivo principal do jogo.
-4. Você verá uma interface gráfica onde poderá selecionar as cores para sua tentativa.
-5. Após pôr as cores, é irreversível e o feedback é automático.
-6. Continue tentando até decifrar a combinação ou atingir o limite de tentativas.
-7. Após o término do jogo, você terá a opção de reiniciá-lo para jogar novamente.
+1. Ensure that Python is installed on your system.
+2. Clone or download the repository of this game.
+3. Run the main game file.
+4. You will see a graphical interface where you can select colors for your guess.
+5. Once you set the colors, it is irreversible, and feedback is automatic.
+6. Keep trying until you decipher the combination or reach the attempt limit.
+7. After the game ends, you will have the option to restart it to play again.
 
-## Como Contribuir
+## How to Contribute
 
-Se desejar contribuir para o desenvolvimento deste jogo, siga estas etapas:
+If you wish to contribute to the development of this game, follow these steps:
 
-1. Fork o repositório.
-2. Faça suas modificações e melhorias no código.
-3. Teste suas alterações para garantir que funcionem corretamente.
-4. Envie um pull request descrevendo as mudanças que você fez e suas razões para elas.
+1. Fork the repository.
+2. Make your modifications and improvements to the code.
+3. Test your changes to ensure they work correctly.
+4. Submit a pull request describing the changes you made and the reasons for them.
 
-## Autor
+## Author
 
-Este jogo foi recriado por Ageu Felipe Nunes Moraes como parte de um projeto acadêmico inspirado no clássico Jogo da Senha. Para dúvidas ou sugestões, entre em contato com [ageumoraers67@gmail.com].
+This game was recreated by Ageu Felipe Nunes Moraes as part of an academic project inspired by the classic Mastermind game. For questions or suggestions, contact [ageumoraers67@gmail.com](mailto:ageumoraers67@gmail.com).
 
-## Aviso Legal
+## Disclaimer
 
-Este é um projeto de software desenvolvido por um indivíduo e não tem afiliação com o jogo Mastermind original ou seus criadores.
+This is a software project developed by an individual and is not affiliated with the original Mastermind game or its creators.
